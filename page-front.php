@@ -50,11 +50,11 @@ get_header(); ?>
     
     
     <a class="left carousel-control hidden-xs" href="#frontCarousel" role="button" data-slide="prev">
-        <img src="img/left_arrow.png" alt="">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/left_arrow.png" alt="">
         <span class="sr-only">Previous</span>
     </a>
     <a class="right carousel-control hidden-xs" href="#frontCarousel" role="button" data-slide="next">
-        <img src="img/right_arrow.png" alt="">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/right_arrow.png" alt="">
         <span class="sr-only">Next</span>
     </a>
 </div>
