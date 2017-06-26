@@ -1,0 +1,20 @@
+@mixin box-shadow($shadowFix) {
+  -webkit-box-shadow: $shadowFix;
+  -moz-box-shadow: $shadowFix;
+  -ms-box-shadow: $shadowFix;
+  -o-box-shadow: $shadowFix;
+  box-shadow: $shadowFix;
+}
+@mixin transition($transitionFix) {
+  -webkit-transition: $transitionFix;
+  -moz-transition: $transitionFix;
+  -ms-transition: $transitionFix;
+  -o-transition: $transitionFix;
+  transition: $transitionFix;
+}
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
