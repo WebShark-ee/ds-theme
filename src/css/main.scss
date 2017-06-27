@@ -105,6 +105,13 @@ a:hover{
     font-size: 0;
 }
 
+@media (min-width: 1200px) {
+    
+    .navbar-placeholder {
+        height: 116px;
+    }
+}
+
 @media (min-width: 768px) {
     .home {
         .navbar-placeholder {
@@ -114,7 +121,6 @@ a:hover{
     }
     
     .navbar-placeholder {
-        height: 116px;
         margin-bottom: 20px;
     }
 }
@@ -651,6 +657,9 @@ input:checked + .slider:before {
 //tabs-body-copy
 
 .tab-content {
+    @media (min-width: 1200px) {
+        min-height: 680px
+    }
     p {
         font-size: 14px;
         color: #000;
@@ -900,7 +909,11 @@ input:checked + .slider:before {
         text-align: center;
         float: right;
         padding: 3px 0;
-        margin-right: 15px;
+        margin-right: 10px;
+        
+        .tab-content & {
+            margin-right: 0;
+        }
     }
     .items-counter.system{
         margin: -2px 4px 0 0;
@@ -1249,10 +1262,6 @@ input:checked + .slider:before {
 
         .product-card {
             margin: 10px !important;
-        }
-        
-        .product-card:nth-child(1), .product-card:nth-child(7) {
-            margin-left: 10px !important;
         }
     }
 }
@@ -1955,7 +1964,7 @@ input:checked + .slider:before {
         }
     }
 
-    .tabs-change{
+    .tabs-change {
         float: left;
         padding: 19px 0 0 30px;
         span{
@@ -1967,7 +1976,7 @@ input:checked + .slider:before {
         }
     }
 
-    .row-cards{
+    .row-cards {
 
         margin: 0 0 50px 0;
 
@@ -1978,15 +1987,14 @@ input:checked + .slider:before {
             padding: 0;
             height: auto;
 
-            img{
-
+            img {
                 width: 650px;
                 height: auto;
                 margin: auto;
                 display: block;
                 float: none;
-                border-top: 18px solid #f2f2f2;
-                border-bottom: 18px solid #f2f2f2;
+                border-top: 30px solid #f2f2f2;
+                border-bottom: 5px solid #f2f2f2;
             }
             .description-wrapper{
                 width: auto;
