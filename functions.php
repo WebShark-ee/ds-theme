@@ -864,20 +864,20 @@ function show_set_content() {
     ) );
     $post_ids = array_values($results);
     echo '<ul class="products animated-grid">';
-            $args = array(
-                'post_type' => 'product',
-                'posts_per_page' => 12,
-                'post__in' => $post_ids
-                );
-            $loop = new WP_Query( $args );
-            if ( $loop->have_posts() ) {
-                while ( $loop->have_posts() ) : $loop->the_post();
-                    wc_get_template_part( 'content', 'product' );
-                endwhile;
-            } else {
-                echo __( 'No products found' );
-            }
-            wp_reset_postdata();
+        $args = array(
+            'post_type' => 'product',
+            'posts_per_page' => -1,
+            'post__in' => $post_ids
+        );
+        $loop = new WP_Query( $args );
+        if ( $loop->have_posts() ) {
+            while ( $loop->have_posts() ) : $loop->the_post();
+                wc_get_template_part( 'content', 'product' );
+            endwhile;
+        } else {
+            echo __( 'No products found' );
+        }
+        wp_reset_postdata();
     echo '</ul>';
 }
 
@@ -1285,3 +1285,170 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
+
+
+/* add custom post type - banner */
+
+add_action( 'init', 'codex_custom_init_learn' );
+function codex_custom_init_learn() {
+  $labels = array(
+    'name' => _x('Learn', 'post type general name'),
+    'singular_name' => _x('Learn', 'post type singular name'),
+    'add_new' => _x('Add Learn', 'Learn'),
+    'add_new_item' => __('Add new Learn'),
+    'edit_item' => __('Edit Learn'),
+    'new_item' => __('New Learn'),
+    'all_items' => __('All Learns'),
+    'view_item' => __('View Learn'),
+    'search_items' => __('Search Learn'),
+    'not_found' =>  __('No Learn found'),
+    'not_found_in_trash' => __('No Learn found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'Learn'
+
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'taxonomies' => array('learn_categorie', 'learn_tag'),
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+	'menu_icon' => 'dashicons-welcome-learn-more',
+    'capability_type' => 'post',
+    'has_archive' => true, 
+    'hierarchical' => false,
+    'menu_position' => 5,
+    'supports' => array( 'title', 'editor', 'comments', 'thumbnail' )
+  ); 
+  register_post_type('learn',$args);
+  flush_rewrite_rules();
+}
+
+//add filter to ensure the text plot, or plot, is displayed when user updates a plot 
+add_filter( 'post_updated_messages', 'codex_learn_updated_messages' );
+function codex_learn_updated_messages( $messages ) {
+  global $post, $post_ID;
+
+  $messages['learn'] = array(
+    0 => '', // Unused. Messages start at index 1.
+    1 => sprintf( __('Learn updated. <a href="%s">View Learn</a>'), esc_url( get_permalink($post_ID) ) ),
+    2 => __('Custom field updated.'),
+    3 => __('Custom field deleted.'),
+    4 => __('Learn updated.'),
+    /* translators: %s: date and time of the revision */
+    5 => isset($_GET['revision']) ? sprintf( __('Learn restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+    6 => sprintf( __('Learn published. <a href="%s">View Learn</a>'), esc_url( get_permalink($post_ID) ) ),
+    7 => __('Learn saved.'),
+    8 => sprintf( __('Learn submitted. <a target="_blank" href="%s">Preview Learn</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+    9 => sprintf( __('Learn scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Learn</a>'),
+      // translators: Publish box date format, see http://php.net/date
+      date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+    10 => sprintf( __('Learn draft updated. <a target="_blank" href="%s">Preview Learn</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+  );
+
+  return $messages;
+}
+
+//display contextual help for product
+add_action( 'contextual_help', 'codex_add_help_text_learn', 10, 3 );
+
+function codex_add_help_text_learn( $contextual_help, $screen_id, $screen ) { 
+  //$contextual_help .= var_dump( $screen ); // use this to help determine $screen->id
+  if ( 'learn' == $screen->id ) {
+    $contextual_help =
+      '<p>' . __('Things to remember when adding or editing a Learn:') . '</p>' .
+      '<ul>' .
+      '<li>' . __('Specify the correct genre such as Mystery, or Historic.') . '</li>' .
+      '<li>' . __('Specify the correct writer of the Learn.  Remember that the Author module refers to you, the author of this Learn review.') . '</li>' .
+      '</ul>' .
+      '<p>' . __('If you want to schedule the Learn review to be published in the future:') . '</p>' .
+      '<ul>' .
+      '<li>' . __('Under the Learn module, click on the Edit link next to Publish.') . '</li>' .
+      '<li>' . __('Change the date to the date to actual publish this article, then click on Ok.') . '</li>' .
+      '</ul>' .
+      '<p><strong>' . __('For more information:') . '</strong></p>' .
+      '<p>' . __('<a href="http://codex.wordpress.org/Posts_Edit_SubPanel" target="_blank">Edit Posts Documentation</a>') . '</p>' .
+      '<p>' . __('<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>' ;
+  } elseif ( 'edit-learn' == $screen->id ) {
+    $contextual_help = 
+      '<p>' . __('This is the help screen displaying the table of Learn blah blah blah.') . '</p>' ;
+  }
+  return $contextual_help;
+}
+
+add_action( 'init', 'create_learn_taxonomies', 0 );
+
+// create two taxonomies, genres and writers for the post type "book"
+function create_learn_taxonomies() {
+	// Add new taxonomy, make it hierarchical (like categories)
+	$labels = array(
+		'name'              => _x( 'Categories', 'taxonomy general name', 'textdomain' ),
+		'singular_name'     => _x( 'Categorie', 'taxonomy singular name', 'textdomain' ),
+		'search_items'      => __( 'Search Categories', 'textdomain' ),
+		'all_items'         => __( 'All Categorie', 'textdomain' ),
+		'parent_item'       => __( 'Parent Categorie', 'textdomain' ),
+		'parent_item_colon' => __( 'Parent Categorie:', 'textdomain' ),
+		'edit_item'         => __( 'Edit Categorie', 'textdomain' ),
+		'update_item'       => __( 'Update Categorie', 'textdomain' ),
+		'add_new_item'      => __( 'Add New Categorie', 'textdomain' ),
+		'new_item_name'     => __( 'New Categorie Name', 'textdomain' ),
+		'menu_name'         => __( 'Categories', 'textdomain' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'learn_categorie' ),
+	);
+
+	register_taxonomy( 'learn_categorie', array( 'learn' ), $args );
+
+	// Add new taxonomy, NOT hierarchical (like tags)
+	$labels = array(
+		'name'                       => _x( 'Tags', 'taxonomy general name', 'textdomain' ),
+		'singular_name'              => _x( 'Tag', 'taxonomy singular name', 'textdomain' ),
+		'search_items'               => __( 'Search Tags', 'textdomain' ),
+		'popular_items'              => __( 'Popular Tags', 'textdomain' ),
+		'all_items'                  => __( 'All Tags', 'textdomain' ),
+		'parent_item'                => null,
+		'parent_item_colon'          => null,
+		'edit_item'                  => __( 'Edit Tag', 'textdomain' ),
+		'update_item'                => __( 'Update Tag', 'textdomain' ),
+		'add_new_item'               => __( 'Add New Tag', 'textdomain' ),
+		'new_item_name'              => __( 'New Tag Name', 'textdomain' ),
+		'separate_items_with_commas' => __( 'Separate tags with commas', 'textdomain' ),
+		'add_or_remove_items'        => __( 'Add or remove tags', 'textdomain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used tags', 'textdomain' ),
+		'not_found'                  => __( 'No tags found.', 'textdomain' ),
+		'menu_name'                  => __( 'Tags', 'textdomain' ),
+	);
+
+	$args = array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_admin_column'     => true,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		'rewrite'               => array( 'slug' => 'learn_tag' ),
+	);
+
+	register_taxonomy( 'learn_tag', 'learn', $args );
+}
+
+
+
+add_action( 'pre_get_posts', 'add_custom_post_types_to_loop' );
+
+function add_custom_post_types_to_loop( $query ) {
+	if ( is_home() && $query->is_main_query() )
+		$query->set( 'post_type', array( 'post', 'portfolio' ) );
+	return $query;
+}
+

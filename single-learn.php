@@ -14,7 +14,7 @@ get_header(); ?>
 
 <div class="container">
     <div class="row row-learn">
-        <div id="sidebar" class="col-sm-12 col-md-3 col-md-push-9">
+        <div id="sidebar" class="col-sm-12 col-md-4 col-md-push-8">
             <div class="wrapper">
                 <div class="form-group">
                     <div class="input-group">
@@ -29,8 +29,8 @@ get_header(); ?>
                 <h1 class="box-heading">Tags</h1>
                 <div class="post_tags">
                 <?php
-                $args = array('hide_empty' => false);
-                $tags = get_tags($args);
+                $args = array('taxonomy' => 'learn_tag', 'hide_empty' => false);
+                $tags = get_terms($args);
                 foreach ( $tags as $tag ) {
                     $tag_link = get_tag_link( $tag->term_id );
                     echo '<a href="' . $tag_link . '">' . $tag->name . '</a> ';
@@ -41,7 +41,8 @@ get_header(); ?>
                 <ul class="posts">
                     <?php
                     $args = array(
-                        'numberposts' => 3
+                        'numberposts' => 3,
+                        'post_type' => 'learn',
                     );
                     $recent_posts = wp_get_recent_posts($args);
                     foreach( $recent_posts as $recent ){
@@ -53,8 +54,8 @@ get_header(); ?>
                 <h1 class="box-heading">Categories</h1>
                 <ul class="posts">
                     <?php
-                    $args = array('type' => 'post', 'hide_empty' => false);
-                    $tags = get_categories($args);
+                    $args = array('taxonomy' => 'learn_categorie', 'hide_empty' => false);
+                    $tags = get_terms($args);
                     foreach ( $tags as $tag ) {
                         $tag_link = get_tag_link( $tag->term_id );
                         echo '<li><a href="' . $tag_link . '">' . $tag->name . '</a></li>';
@@ -64,13 +65,15 @@ get_header(); ?>
             </div>
         </div>
         
-        <div class="col-sm-12 col-md-9 col-md-pull-3">
-            <div class="card-post">
+        <div class="col-sm-12 col-md-8 col-md-pull-4">
+            <div class="row row-posts">
                 <?php
                 while ( have_posts() ) : the_post();
 
-					get_template_part( 'template-parts/post/content', get_post_format() );
-
+					get_template_part( 'template-parts/post/content', 'learn' );
+                    if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
 				endwhile; // End of the loop.
                 ?>
             </div>
