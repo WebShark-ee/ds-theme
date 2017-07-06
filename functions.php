@@ -609,6 +609,8 @@ function specifications_tab( $tabs ) {
 function show_specification_content() {
 	if ( have_rows('specifications') ):
         while ( have_rows('specifications') ) : the_row();
+    
+        if ( have_rows('facts_left') || have_rows('facts_right') ) {
             echo '<div class="row row-specifications"><div class="col-md-12">';
             echo '<div class="row">';
             if ( have_rows('facts_left') ):
@@ -653,6 +655,8 @@ function show_specification_content() {
             
             echo '</div>';
             echo '</div></div>';
+            
+        }
             
             echo '<div class="row row-specifications"><div class="col-md-12">';
             echo '<div class="row">';
@@ -713,12 +717,12 @@ function show_specification_content() {
             echo '</div>';
             echo '</div></div>';
             
-            if (get_sub_field('image') != '') {
+            if (have_rows('images')) {
                 echo '<div class="row row-specifications"><div class="col-md-12">';
-                echo '<div class="row">';
-                $image_desktop = get_sub_field('image');
-                echo '<img src="' . $image_desktop['url'] . '" alt="" class="visible-lg-block img-responsive">';
-                echo '</div>';
+                while ( have_rows('images') ) : the_row();
+                    $image_desktop = get_sub_field('image');
+                    echo '<img src="' . $image_desktop['url'] . '" alt="" class="visible-lg-block img-responsive">';
+                endwhile;
                 echo '</div></div>';
             }
         endwhile;

@@ -674,10 +674,6 @@ input:checked + .slider:before {
     .col-md-12 {
         padding: 0;
     }
-
-    .col-md-6 {
-        background-color: #fff;
-    }
 }
 
 .product-card {
@@ -765,8 +761,13 @@ input:checked + .slider:before {
 .row-features {
     background-color: #fff;
     margin: 0;
-    margin-top: 13px;
-
+    
+    .wc-tab > & {
+        &:first-child {
+            margin-top: 13px;
+        }
+    }
+    
     h1 {
         font-size: 17px;
         color: #000;
@@ -1212,7 +1213,7 @@ input:checked + .slider:before {
 }
 .row-specifications {
     background-color: #fff;
-    margin: 15px;
+    margin: 15px 0;
 
     .table{
         margin: 10px 0;
@@ -2467,7 +2468,7 @@ input:checked + .slider:before {
         .footer-nav-left{
 
 
-            li>a{
+            li>a {
                 line-height: 25px;
                 padding: 0;
                 font-size: 20px;
