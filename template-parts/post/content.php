@@ -12,7 +12,7 @@
 
 ?>
 <div class="product-card-fluid">
-    <?php the_post_thumbnail( 'twentyseventeen-featured-image', ['class' => 'img-responsive'] ); ?>
+    <a href="<?php echo get_permalink(); ?>"><?php the_post_thumbnail( 'twentyseventeen-featured-image', ['class' => 'img-responsive'] ); ?></a>
     <div class="product-fluid-description">
         <?php
 			/* translators: %s: Name of current post */

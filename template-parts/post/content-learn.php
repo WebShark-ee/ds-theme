@@ -12,7 +12,7 @@
 
 ?>
 <div class="col-xs-12">
-    <h1>Sample post with, links, paragraphs and comments</h1>
+    <h1><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h1>
     <p>
         <?php twentyseventeen_posted_on(); ?>
         <span class="span-block"><strong>Tags: </strong><?php echo get_the_term_list( $post->ID, 'learn_tag', '', ', ' ); ?></span>     
@@ -31,7 +31,12 @@
             __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
             get_the_title()
         ) );
-
+        if ( !is_single() ) :
+        ?>
+        <a href="<?php echo get_permalink(); ?>" class="read-btn">Read more</a>
+        <?php
+        endif;
+        
         wp_link_pages( array(
             'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
             'after'       => '</div>',

@@ -414,7 +414,7 @@ add_action( 'wp_head', 'twentyseventeen_colors_css_wrap' );
 function twentyseventeen_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'twentyseventeen-fonts', twentyseventeen_fonts_url(), array(), null );
-
+    wp_enqueue_style( 'titillum', 'https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700' );
 	// Theme stylesheet.
 	wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
 
@@ -610,53 +610,52 @@ function show_specification_content() {
 	if ( have_rows('specifications') ):
         while ( have_rows('specifications') ) : the_row();
     
-        if ( have_rows('facts_left') || have_rows('facts_right') ) {
-            echo '<div class="row row-specifications"><div class="col-md-12">';
-            echo '<div class="row">';
-            if ( have_rows('facts_left') ):
-                echo '<div class="col-md-6"><table class="table">';
-                    $lfn = 1;
-                    while ( have_rows('facts_left') ) : the_row();
-                        echo '<tr>';
-                        echo '<td';
-                        if ($lfn == '1')
-                        {
-                            echo ' class="no-border"';
-                        }
-                        echo '>';
-                        echo '<b>> </b>';
-                        echo get_sub_field('lines_left');
-                        echo '</td>';
-                        echo '</tr>';
-                        $lfn++;
-                    endwhile;
-                echo '</table></div>';
-            endif;
-            
-            if ( have_rows('facts_right') ):
-                echo '<div class="col-md-6"><table class="table">';
-                    $lrn = 1;
-                    while ( have_rows('facts_right') ) : the_row();
-                        echo '<tr>';
-                        echo '<td';
-                        if ($lrn == '1')
-                        {
-                            echo ' class="no-border"';
-                        }
-                        echo '>';
-                        echo '<b>> </b>';
-                        echo get_sub_field('lines_right');
-                        echo '</td>';
-                        echo '</tr>';
-                        $lrn++;
-                    endwhile;
-                echo '</table></div>';
-            endif;
-            
-            echo '</div>';
-            echo '</div></div>';
-            
-        }
+            if ( have_rows('facts_left') || have_rows('facts_right') ) {
+                echo '<div class="row row-specifications"><div class="col-md-12">';
+                echo '<div class="row">';
+                if ( have_rows('facts_left') ):
+                    echo '<div class="col-md-6"><table class="table">';
+                        $lfn = 1;
+                        while ( have_rows('facts_left') ) : the_row();
+                            echo '<tr>';
+                            echo '<td';
+                            if ($lfn == '1')
+                            {
+                                echo ' class="no-border"';
+                            }
+                            echo '>';
+                            echo '<b>> </b>';
+                            echo get_sub_field('lines_left');
+                            echo '</td>';
+                            echo '</tr>';
+                            $lfn++;
+                        endwhile;
+                    echo '</table></div>';
+                endif;
+
+                if ( have_rows('facts_right') ):
+                    echo '<div class="col-md-6"><table class="table">';
+                        $lrn = 1;
+                        while ( have_rows('facts_right') ) : the_row();
+                            echo '<tr>';
+                            echo '<td';
+                            if ($lrn == '1')
+                            {
+                                echo ' class="no-border"';
+                            }
+                            echo '>';
+                            echo '<b>> </b>';
+                            echo get_sub_field('lines_right');
+                            echo '</td>';
+                            echo '</tr>';
+                            $lrn++;
+                        endwhile;
+                    echo '</table></div>';
+                endif;
+
+                echo '</div>';
+                echo '</div></div>';
+            }
             
             echo '<div class="row row-specifications"><div class="col-md-12">';
             echo '<div class="row">';
@@ -1446,13 +1445,47 @@ function create_learn_taxonomies() {
 	register_taxonomy( 'learn_tag', 'learn', $args );
 }
 
-
-
-add_action( 'pre_get_posts', 'add_custom_post_types_to_loop' );
-
-function add_custom_post_types_to_loop( $query ) {
-	if ( is_home() && $query->is_main_query() )
-		$query->set( 'post_type', array( 'post', 'portfolio' ) );
-	return $query;
+function revcon_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'News';
+    $submenu['edit.php'][5][0] = 'News';
+    $submenu['edit.php'][10][0] = 'Add News';
 }
+function revcon_change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'News';
+    $labels->singular_name = 'News';
+    $labels->add_new = 'Add News';
+    $labels->add_new_item = 'Add News';
+    $labels->edit_item = 'Edit News';
+    $labels->new_item = 'News';
+    $labels->view_item = 'View News';
+    $labels->search_items = 'Search News';
+    $labels->not_found = 'No News found';
+    $labels->not_found_in_trash = 'No News found in Trash';
+    $labels->all_items = 'All News';
+    $labels->menu_name = 'News';
+    $labels->name_admin_bar = 'News';
+}
+ 
+add_action( 'admin_menu', 'revcon_change_post_label' );
+add_action( 'init', 'revcon_change_post_object' );
+
+function wpdev_nav_classes($classes) {
+    // Remove "current_page_parent" class
+    $classes = array_diff( $classes, array( 'current_page_parent' ) );
+
+    // If this is the "news" custom post type, highlight the correct menu item
+    if ( in_array('menu-item-523', $classes) && get_post_type() === 'post' ) {
+        $classes[] = 'current_page_parent';
+    }
+    if ( in_array('menu-item-531', $classes) && get_post_type() === 'learn' ) {
+        $classes[] = 'current_page_parent';
+    }
+
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'wpdev_nav_classes');
 

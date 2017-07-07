@@ -1,7 +1,7 @@
+$link-color: #00afcb;
+
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "css3-mixins.scss";
-
-@import url("https://fonts.googleapis.com/css?family=Titillium+Web:300,400,,600,700");
 
 * {
     outline: 0;
@@ -219,7 +219,7 @@ a:hover{
         line-height: 28px;
     }
 
-    .active a, .current-menu-parent {
+    .active a, .current-menu-parent a, .current_page_parent a {
         background: none;
         border-bottom: 3px solid #00afcb;
     }
@@ -1160,11 +1160,6 @@ input:checked + .slider:before {
         color: #000;
     }
 
-    a {
-        font-size: 14px;
-        color: #00afcb;
-    }
-
     span {
         color: #000;
     }
@@ -1216,7 +1211,7 @@ input:checked + .slider:before {
     margin: 15px 0;
 
     .table{
-        margin: 10px 0;
+        margin: 10px;
     }
     .no-border{
         border: 0;
