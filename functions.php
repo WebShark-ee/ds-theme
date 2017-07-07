@@ -1478,10 +1478,10 @@ function wpdev_nav_classes($classes) {
     $classes = array_diff( $classes, array( 'current_page_parent' ) );
 
     // If this is the "news" custom post type, highlight the correct menu item
-    if ( in_array('menu-item-523', $classes) && get_post_type() === 'post' ) {
+    if ( in_array('menu-item-523', $classes) && get_post_type() === 'post' || in_array('menu-item-691', $classes) && get_post_type() === 'post' ) {
         $classes[] = 'current_page_parent';
     }
-    if ( in_array('menu-item-531', $classes) && get_post_type() === 'learn' ) {
+    if ( in_array('menu-item-531', $classes) && get_post_type() === 'learn' || in_array('menu-item-690', $classes) && get_post_type() === 'learn' ) {
         $classes[] = 'current_page_parent';
     }
 
