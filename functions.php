@@ -890,6 +890,12 @@ function ds_scripts() {
 	wp_enqueue_script( 'main', get_theme_file_uri( '/assets/js/main.js' ), array( 'jquery' ), '2.1.2', true );
     wp_enqueue_script( 'currency', get_theme_file_uri( '/assets/js/wcml-multi-currency-custom-switcher.js' ), array( 'jquery' ), '2.1.2', true );
     wp_enqueue_style( 'font-awsome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', '1.0' );
+    if ( is_page('voyager') ) {
+		wp_enqueue_style( 'main-voyager-style', get_theme_file_uri( '/assets/css/main.css' ), array( 'twentyseventeen-style' ), '1.0' );
+        wp_enqueue_style( 'magnific-popup-style', get_theme_file_uri( '/assets/css/magnific-popup.css' ), array( 'twentyseventeen-style' ), '1.0' );
+        wp_enqueue_script( 'magnific-popup-script', get_theme_file_uri( '/assets/js/jquery.magnific-popup.min.js' ), array(), '1.0', true );
+        wp_enqueue_script( 'main-voyager-script', get_theme_file_uri( '/assets/js/main-voyager.js' ), array(), '1.0', true );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'ds_scripts' );
 

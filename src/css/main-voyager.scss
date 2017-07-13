@@ -1,0 +1,224 @@
+$cyan: #2EE4FF;
+$red: #E30004;
+$yellow: #FFE573;
+$green: #00E792;
+$grey: #BFBFBF;
+
+.navbar-placeholder {
+    margin-bottom: 0;
+    background: #000;
+}
+
+.voyager {
+    
+    background: #000;
+    color: #FFF;
+	font-size: 18px;
+	line-height: 1.23;
+	font-weight: 300;
+
+    .container {
+        width: 100%;
+        max-width: 1240px;
+        margin: auto;
+    }
+    .video-container {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        iframe {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .row, .col {
+        overflow: hidden;
+        padding: 0 10px;
+    }
+    .separator {
+        border: 1px solid $cyan;
+        opacity: 0.3;
+        margin: 0 0 50px;
+    }
+
+    .bg {
+        background-image: none;
+        p {
+            text-shadow: 1px 1px 2px #000;
+        }
+    }
+    h2, h3 {
+        font-size: 38px;
+        font-weight: 400;
+        text-align: center;
+        margin: 50px 0 40px;
+    }
+    h3 {
+        font-size: 24px;
+        margin: 30px 0 30px;
+    }
+    ul {
+        li {
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        padding: 0;
+        margin: 0 0 30px;
+        list-style-type: none;
+    }
+    ol {
+        li {
+            color: $green;
+            font-weight: 700;
+            line-height: 28px;
+        }
+        span {
+            color: $grey;
+            font-weight: 300;
+        }
+    }
+    .cyan {
+        color: $cyan;
+    }
+    .red {
+        color: $red;
+    }
+    .yellow {
+        color: $yellow;
+    }
+    .green {
+        color: $green;
+    }
+    .grey {
+        color: $grey;
+    }
+    .text-center {
+        text-align: center;
+    }
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+    .img-centered {
+        margin: auto;
+    }
+    a {
+        display: inline-block;
+        padding: 6px 14px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #FFF;
+        font-size: 18px;
+        font-weight: 300;
+        text-decoration: none;
+        text-align: center;
+        background-color: #FF1124;
+    }
+    .last-button {
+        margin: 80px 0 50px;
+    }
+    .gallery {
+        padding: 0 10px;
+        margin-top: 50px;
+        .col {
+            padding: 5px 10px;
+            position: relative;
+        }
+        .arrow {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -48px;
+            margin-top: -32px;
+            width: 64px;
+            height: 64px;
+            border: solid;
+            border-color: $yellow;
+            border-width: 1px 1px 0 0;
+            transform: rotate(45deg);
+        }
+        a {
+            display: block;
+            padding: 0;
+            cursor: pointer;
+            background-color: transparent;
+        }
+    }
+    .italic {
+        font-style: italic;
+        margin: 35px 0 60px;
+    }
+    .collapse {
+        display: none;
+    }
+    .collapse.in {
+        display: block;
+    }
+    @media (min-width: 480px) {
+        .gallery {
+            display: table;
+            width: 100%;
+            padding: 0 20px;
+            .col {
+                float: left;
+                width: 50%;
+                padding: 10px 20px;
+            }
+        }
+    }
+    @media (min-width: 768px) {
+        h2 {
+            font-size: 5vw;
+        }
+        .row, .col {
+            padding: 0 20px;
+        }
+        .col-25, .col-50, .col-75 {
+            float: left;
+        }
+        .col-25 {
+            width: 25%;
+        }
+        .col-50 {
+            width: 50%;
+        }
+        .col-75 {
+            width: 75%;
+        }
+        .gallery {
+            .arrow {
+                margin-left: -63px;
+                margin-top: -42px;
+                width: 84px;
+                height: 84px;
+            }
+        }
+        .bg {
+            background-image: url(../../img/bg.jpg);
+            background-position: right bottom;
+            background-repeat: no-repeat;
+        }
+    }
+    @media (min-width: 960px) {
+        h3 {
+            font-size: 2.5vw;
+        }
+    }
+    @media (min-width: 1240px) {
+        h2 {
+            font-size: 61px;
+        }
+        h3 {
+            font-size: 30px;
+        }
+    }
+}

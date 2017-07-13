@@ -74,6 +74,7 @@ module.exports = function(grunt) {
                 },
                 files: { // Dictionary of files
                     'app/css/main.css': 'src/css/main.scss',
+                    'assets/css/main.css': 'src/css/main-voyager.scss',
 
                 }
 
