@@ -23,6 +23,8 @@
                 </label>
             </div>
             <input class="form-control" type="search" id="<?php echo $unique_id; ?>" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'twentyseventeen' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+            <input type="hidden" value="1" name="sentence" />
+            <input type="hidden" value="product" name="post_type" />
         </div>
     </div>
 </form>
