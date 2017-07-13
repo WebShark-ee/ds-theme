@@ -2601,7 +2601,8 @@ input:checked + .slider:before {
     
     .comment {
         width: 100%;
-        overflow: hidden
+        margin-bottom: 10px;
+        overflow: hidden;
     }
 }
 
@@ -2619,6 +2620,7 @@ input:checked + .slider:before {
     display: block;
     float: right;
     border: 1px solid #6d6d6d;
+    background: #FFF;
     color: #000000;
     font-size: 13px;
     font-weight: 300;
@@ -2637,5 +2639,10 @@ input:checked + .slider:before {
     label {
         display: block;
         margin: 10px 0 5px;
+    }
+    
+    .submit {
+        @extend .comment-reply-link;
+        @extend .pull-left;
     }
 }

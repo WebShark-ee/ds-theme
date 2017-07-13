@@ -1489,3 +1489,14 @@ function wpdev_nav_classes($classes) {
 }
 add_filter('nav_menu_css_class', 'wpdev_nav_classes');
 
+function template_chooser($template)   
+{    
+    global $wp_query;   
+    $post_type = get_query_var('post_type');   
+    if( $wp_query->is_search && $post_type == 'learn' )   
+    {
+        return locate_template('archive-learn.php');
+    }   
+    return $template;
+}
+add_filter('template_include', 'template_chooser');    
