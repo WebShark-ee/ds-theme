@@ -74,10 +74,11 @@ get_header(); ?>
         </div>
         
         <div class="col-sm-12 col-md-9 col-md-pull-3">
-            <div class="row row-cards-fluid">
                 <?php
                 if ( have_posts() ) :
-
+                    ?>
+                    <div class="row row-cards-fluid">
+                    <?php
                     /* Start the Loop */
                     while ( have_posts() ) : the_post();
 
@@ -89,10 +90,13 @@ get_header(); ?>
                         get_template_part( 'template-parts/post/content', get_post_format() );
 
                     endwhile;
-
+                    ?>
+                    </div>
+                    <div class="clearfix"></div>
+                    <?php
                     the_posts_pagination( array(
-                        'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-                        'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+                        'prev_text' => '→' . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
+                        'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . '→',
                         'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
                     ) );
 
@@ -102,7 +106,6 @@ get_header(); ?>
 
                 endif;
                 ?>
-            </div>
         </div>
     </div>
 </div>

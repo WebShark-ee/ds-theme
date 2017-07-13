@@ -2646,3 +2646,44 @@ input:checked + .slider:before {
         @extend .pull-left;
     }
 }
+
+.pagination {
+    display: block;
+    text-align: center;
+    
+    .screen-reader-text {
+        display: none
+    }
+    
+    .nav-links {
+        display: inline-block;
+        border-top: 1px solid #d3ced2;
+        border-left: 1px solid #d3ced2;
+        border-bottom: 1px solid #d3ced2;
+    }
+    
+    .page-numbers {
+        display: inline-block;
+        float: left;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1;
+        margin: 0;
+        min-width: 1em;
+        padding: 0.5em;
+        text-decoration: none;
+        border-right: 1px solid #d3ced2;
+        color: #00afcb;
+        
+        &:hover {
+            background: #EBE9EB;
+            color: #8A7E88;
+        }
+    }
+    
+    .current {
+        background: #EBE9EB;
+        color: #8A7E88;
+    }
+    
+}
