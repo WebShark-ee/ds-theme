@@ -24,7 +24,7 @@ get_header(); ?>
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgSearch"/>
                                 </svg>
                             </div>
-                            <input class="form-control" placeholder="search:" type="text" value="" name="s" id="s">
+                            <input class="form-control" placeholder="search:" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s">
                             <input type="hidden" value="1" name="sentence" />
                             <input type="hidden" value="post" name="post_type" />
                         </div>
