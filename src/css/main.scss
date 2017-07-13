@@ -872,11 +872,10 @@ input:checked + .slider:before {
     }
 
     .btn-primary {
-        background-color: #000;
+        background-color: #858585;
         color: #fff;
         border-radius: 0;
         border: 0;
-        border-bottom: 3px solid #00afcb;
         font-weight: bold;
         font-size: 14px;
         padding: 1px 15px;
@@ -885,19 +884,22 @@ input:checked + .slider:before {
         width: 80px;
 
         &:active:focus {
-            background-color: #000;
-            border-bottom: 3px solid #00afcb;
+            background-color: #858585;
+            border: 0;
         }
     }
 
-    .btn-disabled {
-        background-color: #858585;
+    .btn-disabled, .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+        background-color: #000;
         border: 0;
+        opacity: 1.0;
+        border-bottom: 3px solid #00afcb;
         font-weight: 300;
 
         &:active:focus {
-            background-color: #858585;
-            border: 0;
+            background-color: #000;
+            border-bottom: 3px solid #00afcb;
+            
         }
     }
 
@@ -2586,4 +2588,54 @@ input:checked + .slider:before {
 .flex-direction-nav a.flex-next::before {
     content: '\f105';
     font-family: FontAwesome
+}
+
+.comments-title {
+    font-size: 15px
+}
+
+.comment-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    .comment {
+        width: 100%;
+        overflow: hidden
+    }
+}
+
+.comment-meta {
+    float: left;
+    margin-right: 10px;
+    
+    .avatar {
+        float: left;
+        margin-right: 10px
+    }
+}
+
+.comment-reply-link {
+    display: block;
+    float: right;
+    border: 1px solid #6d6d6d;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 300;
+    height: 21px;
+    padding: 0 5px;
+    
+    svg {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px
+    }
+}
+
+.comment-respond {
+    label {
+        display: block;
+        margin: 10px 0 5px;
+    }
 }
