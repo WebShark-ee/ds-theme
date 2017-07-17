@@ -1068,9 +1068,13 @@ function ws_ajax_products() {
             </div>
             <nav class="woocommerce-pagination">
                 <?php
+                if ($all_tags != '')
+                {
+                    $url_comp = '/?compatatible_with=' . $all_tags;
+                }
                 $page_url = home_url('/');
                 echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
-                    'base'         => esc_url_raw($page_url) . 'product-category/' . $current_cat . '%_%',
+                    'base'         => esc_url_raw($page_url) . 'product-category/' . $current_cat . '%_%' . $url_comp,
                     'format'       => '/page/%#%',
                     'add_args'     => false,
                     'total'        => $wp_query->max_num_pages,
