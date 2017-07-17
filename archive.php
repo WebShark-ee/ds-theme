@@ -72,7 +72,7 @@ get_header(); ?>
             <?php
             if ( have_posts() ) :
                 ?>
-                <div class="row row-cards-fluid"></div>
+                <div class="row row-cards-fluid">
                 <?php
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
@@ -87,6 +87,7 @@ get_header(); ?>
                 endwhile;
                 ?>
                 </div>
+                <div class="clearfix"></div>
                 <?php
                 the_posts_pagination( array(
                     'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
