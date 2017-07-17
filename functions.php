@@ -1281,9 +1281,9 @@ function wpse_sendmail()
     $phone = $_POST['phone'];
     $message = $_POST['comment'];
 	$product = $_POST['product'];
-    $headers = 'From: '.$email ."\r\n".'Reply-To: '.$email;
+    $headers = 'From: info@digitalsputnik.com' . " \r\n".'Reply-To: '.$email;
 
-    if (wp_mail( "silx99@gmail.com", "Form from homepage - Product: ". $message, $headers))
+    if (wp_mail( "silx99@gmail.com", "Form from homepage", "Form from homepage \r\n Name: " . $name . "\r\n Email: " . $email . " \r\n Phone: " . $phone . " \r\n Message: " . $message . "\r\n  - Product: ". $product, $headers))
     {
         echo 'OK';
     }
