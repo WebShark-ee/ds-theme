@@ -21,8 +21,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
+$current_currency = apply_filters('wcml_price_currency', NULL );
+$usd_price = apply_filters( 'wcml_product_price_by_currency', $product->id, $current_currency );
 ?>
 
-<?php if ( $price_html = $product->get_price_html() ) : ?>
+<?php 
+if ($current_currency == 'USD') { 
+	echo '$' . $usd_price; 
+} 
+else {
+	if ( $price_html = $product->get_price_html() ) : ?>
 	<span class="price"><?php echo $price_html; ?></span>
-<?php endif; ?>
+	<?php endif;
+}
+?>

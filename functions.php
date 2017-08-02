@@ -1283,7 +1283,7 @@ function wpse_sendmail()
 	$product = $_POST['product'];
     $headers = 'From: info@digitalsputnik.com' . " \r\n".'Reply-To: '.$email;
 
-    if (wp_mail( "silx99@gmail.com", "Form from homepage", "Form from homepage\r\n Name: " . $name . "\r\nEmail: " . $email . "\r\nPhone: " . $phone . "\r\nMessage: " . $message . "\r\nProduct: ". $product, $headers))
+    if (wp_mail( "info@digitalsputnik.com", "Form from homepage", "Form from homepage\r\n Name: " . $name . "\r\nEmail: " . $email . "\r\nPhone: " . $phone . "\r\nMessage: " . $message . "\r\nProduct: ". $product, $headers))
     {
         echo 'OK';
     }
