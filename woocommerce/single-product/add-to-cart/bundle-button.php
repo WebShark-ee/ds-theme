@@ -18,4 +18,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
-?><button type="submit" class="single_add_to_cart_button bundle_add_to_cart_button button alt"><svg class="svg-cart-plus"><use xlink:href="' . get_stylesheet_directory_uri() . '/img/sprites.svg#svgcartplus" /></svg></button>
+?><button type="submit" class="single_add_to_cart_button bundle_add_to_cart_button pull-right"><svg class="svg-cart-plus"><use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgcartplus" /></svg></button>
