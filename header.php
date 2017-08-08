@@ -94,7 +94,7 @@
                         </li>
                         <?php if (get_field('instagram_url', 'option')) { ?>
                         <li>
-                            <a href="<?php the_field('instagram_url', 'option'); ?>">
+                            <a href="<?php the_field('instagram_url', 'option'); ?>" target="_blank">
                                 <svg class="svg-social-icon">
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgInsta" />
                                 </svg>
@@ -103,7 +103,7 @@
                         <?php } ?>
                         <?php if (get_field('instagram_url', 'option')) { ?>
                         <li>
-                            <a href="<?php the_field('facebook_url', 'option'); ?>">
+                            <a href="<?php the_field('facebook_url', 'option'); ?>" target="_blank">
                                 <svg class="svg-social-icon">
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgFb" />
                                 </svg>
@@ -112,7 +112,7 @@
                         <?php } ?>
                         <?php if (get_field('google_url', 'option')) { ?>
                         <li>
-                            <a href="<?php the_field('google_url', 'option'); ?>">
+                            <a href="<?php the_field('google_url', 'option'); ?>" target="_blank">
                                 <svg class="svg-social-icon">
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgGoogle" />
                                 </svg>
@@ -121,7 +121,7 @@
                         <?php } ?>
                         <?php if (get_field('pinterest_url', 'option')) { ?>
                         <li>
-                            <a href="<?php the_field('pinterest_url', 'option'); ?>">
+                            <a href="<?php the_field('pinterest_url', 'option'); ?>" target="_blank">
                                 <svg class="svg-social-icon">
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgPin" />
                                 </svg>
@@ -130,7 +130,7 @@
                         <?php } ?>
                         <?php if (get_field('twitter_url', 'option')) { ?>
                         <li>
-                            <a href="<?php the_field('twitter_url', 'option'); ?>">
+                            <a href="<?php the_field('twitter_url', 'option'); ?>" target="_blank">
                                 <svg class="svg-social-icon">
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgTwitter" />
                                 </svg>
@@ -153,11 +153,15 @@
                             'walker'            => new WP_Bootstrap_Navwalker())
                         );
                         ?>
-                        <?php
-                        /*
                         <ul class="nav navbar-nav navbar-right" id="nav-bottom-right">
                             <li>
-                                <a href="#">
+                                <?php
+                                $myaccount_page_id = get_option( 'woocommerce_myaccount_page_id' );
+                                if ( $myaccount_page_id  && !is_user_logged_in()) {
+                                    $myaccount_page_url = get_permalink( $myaccount_page_id );
+                                }
+                                ?>
+                                <a href="<?php echo $myaccount_page_url; ?>">
                                     <span>
                                         Log in /Sign up 
                                         <svg class="svg-cart">
@@ -168,8 +172,6 @@
                                 </a>
                             </li>
                         </ul>
-                        */
-                        ?>
                         <div class="navbar-form-small navbar-right">
                             <?php
                             get_search_form();

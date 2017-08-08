@@ -110,7 +110,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <div class="col-sm-12 col-md-<?php if ($is_bundle_product == false) { echo '6'; } else { echo '8'; } ?>">
             <div class="product-description">
-                <a class="btn btn-primary pull-right" data-toggle="modal" data-target="#ask_offer">Ask for offer</a>
+                <!--<a class="btn btn-primary pull-right" data-toggle="modal" data-target="#ask_offer">Ask for offer</a>-->
                 <?php
                     /**
                      * woocommerce_single_product_summary hook.
@@ -148,6 +148,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     add_action('woocommerce_single_product_summary', 'q2a_product_summary');
                     */
                     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+                    add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 0 );
                     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
                     do_action( 'woocommerce_single_product_summary' );
                 ?>

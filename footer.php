@@ -24,7 +24,7 @@
                     <ul class="nav navbar-nav pull-right footer-nav-right">
                         <?php if (get_field('instagram_url', 'option')) { ?>
                         <li>
-                            <a href="<?php the_field('instagram_url', 'option'); ?>">
+                            <a href="<?php the_field('instagram_url', 'option'); ?>" target="_blank">
                                 <svg class="svg-social-icon">
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgInsta" />
                                 </svg>
@@ -33,7 +33,7 @@
                         <?php } ?>
                         <?php if (get_field('facebook_url', 'option')) { ?>
                         <li>
-                            <a href="<?php the_field('facebook_url', 'option'); ?>">
+                            <a href="<?php the_field('facebook_url', 'option'); ?>" target="_blank">
                                 <svg class="svg-social-icon">
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgFb" />
                                 </svg>
@@ -42,7 +42,7 @@
                         <?php } ?>
                         <?php if (get_field('google_url', 'option')) { ?>
                         <li class="hidden-xs">
-                            <a href="<?php the_field('google_url', 'option'); ?>">
+                            <a href="<?php the_field('google_url', 'option'); ?>" target="_blank">
                                 <svg class="svg-social-icon">
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgGoogle" />
                                 </svg>
@@ -51,7 +51,7 @@
                         <?php } ?>
                         <?php if (get_field('pinterest_url', 'option')) { ?>
                         <li class="hidden-xs">
-                            <a href="<?php the_field('pinterest_url', 'option'); ?>">
+                            <a href="<?php the_field('pinterest_url', 'option'); ?>" target="_blank">
                                 <svg class="svg-social-icon">
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgPin" />
                                 </svg>
@@ -60,7 +60,7 @@
                         <?php } ?>
                         <?php if (get_field('twitter_url', 'option')) { ?>
                         <li>
-                            <a href="<?php the_field('twitter_url', 'option'); ?>">
+                            <a href="<?php the_field('twitter_url', 'option'); ?>" target="_blank">
                                 <svg class="svg-social-icon">
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgTwitter" />
                                 </svg>
