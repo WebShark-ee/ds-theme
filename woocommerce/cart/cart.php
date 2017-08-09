@@ -136,6 +136,22 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
 
 			<tr>
+				<td colspan="6">
+					<div class="cart-collaterals">
+						<?php
+							/**
+							* woocommerce_cart_collaterals hook.
+							*
+							* @hooked woocommerce_cross_sell_display
+							* @hooked woocommerce_cart_totals - 10
+							*/
+							do_action( 'woocommerce_cart_collaterals' );
+						?>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
 				<td colspan="6" class="actions">
 
 					<?php if ( wc_coupons_enabled() ) { ?>
@@ -158,17 +174,5 @@ do_action( 'woocommerce_before_cart' ); ?>
 	</table>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
-
-<div class="cart-collaterals">
-	<?php
-		/**
-		 * woocommerce_cart_collaterals hook.
-		 *
-		 * @hooked woocommerce_cross_sell_display
-		 * @hooked woocommerce_cart_totals - 10
-		 */
-	 	do_action( 'woocommerce_cart_collaterals' );
-	?>
-</div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
