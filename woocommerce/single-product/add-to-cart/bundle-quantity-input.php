@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 ?>
-<div class="input-group">
+<div class="input-group pull-left">
 <?php
 if ( ! $product->is_sold_individually() ) {
 	woocommerce_quantity_input( array(
@@ -31,16 +31,4 @@ if ( ! $product->is_sold_individually() ) {
 	?><input class="qty" type="hidden" name="quantity" value="1" /><?php
 }
 ?>
-<span class="input-group-btn">
-    <button type="button" class="btn btn-default btn-number btn-plus" data-type="plus" data-field="quant[1]">
-
-    <div class="arrow-up"></div>
-    </button>
-
-
-    <button type="button" class="btn btn-default btn-number btn-minus" disabled="disabled" data-type="minus" data-field="quant[1]">
-
-    <div class="arrow-down"></div>
-    </button>
-</span>
 </div>

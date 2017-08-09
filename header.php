@@ -157,8 +157,9 @@
                             <li>
                                 <?php
                                 $myaccount_page_id = get_option( 'woocommerce_myaccount_page_id' );
+                                $myaccount_page_url = get_permalink( $myaccount_page_id );
                                 if ( $myaccount_page_id  && !is_user_logged_in()) {
-                                    $myaccount_page_url = get_permalink( $myaccount_page_id );
+                                    
                                 }
                                 ?>
                                 <a href="<?php echo $myaccount_page_url; ?>">

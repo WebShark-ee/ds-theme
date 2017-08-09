@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
-<form method="post" enctype="multipart/form-data" class="cart cart_group bundle_form <?php echo 'layout_' . $product->get_layout(); ?>"><?php
+<form method="post" enctype="multipart/form-data" class="cart cart_group bundle_form pull-right <?php echo 'layout_' . $product->get_layout(); ?>"><?php
 
 	/**
 	 * 'woocommerce_before_bundled_items' action.
