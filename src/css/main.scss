@@ -1,7 +1,9 @@
 $link-color: #00afcb;
 
+@import "variables";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "css3-mixins.scss";
+
 
 * {
     outline: 0;
@@ -2705,21 +2707,25 @@ input:checked + .slider:before {
     th, td {
         border: none !important;
     }
-    .cart_item {
-        th {
-            background-color: #6d6d6d;
-            color: #FFF;
-            border-bottom: none !important;
+    @media (min-width: 769px) {
+        .cart_item {
+            th {
+                background-color: #6d6d6d;
+                color: #FFF;
+            }
+            td {
+                font-size: 1em !important;
+            }
         }
-        td {
-            font-size: 1em !important;
-            border-top: 2px solid #6d6d6d !important;
-            border-bottom: none !important;
+        .cart_item + .cart_item {
+            td {
+                border-top: 2px solid #6d6d6d !important;
+            }
         }
-    }
-    .bundled_table_item {
-        td {
-            border-bottom: 1px solid #6d6d6d !important;
+        .bundled_table_item + .bundled_table_item {
+            td {
+                border-top: 1px solid #6d6d6d !important;
+            }
         }
     }
     a, a:hover, a:visited {
@@ -2789,4 +2795,51 @@ input:checked + .slider:before {
     .button {
         padding: 4px 7px !important;
     }
+}
+.woocommerce-account {
+    .main-content-area {
+        [class*='col-'] {
+            background: #FFF;
+            margin-bottom: 20px;
+        }
+        ul {
+            padding: 0;
+            list-style-type: none;
+            margin-bottom: 20px;
+            a,
+            a:hover,
+            a:focus {
+                background-color: #000;
+                font-size: 1em;
+                border-bottom: 2px solid #00afcb;
+                color: #FFF;
+                font-weight: 700;
+                display: block;
+                text-decoration: none;
+                padding: 5px 10px;
+            }
+            .is-active {
+                a {
+                    border-bottom: 4px solid #00afcb;
+                }
+            }
+        }
+        .entry-header {
+            padding-bottom: 10px;
+        }
+        @media (min-width: 769px) {
+            .woocommerce-MyAccount-navigation {
+                width: 22% !important;
+            }
+            .woocommerce-MyAccount-content {
+                width: 75% !important;
+            }
+        }
+    }
+}
+.btn {
+    padding: 0 5px;
+}
+.btn-info {
+    border-width: 0 0 3px 0;
 }
