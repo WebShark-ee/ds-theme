@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'src/js',
                         src: ['main.js'],
-                        dest: 'app/js',
+                        dest: 'assets/js',
                         filter: 'isFile'
                     },
                     {

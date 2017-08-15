@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <div class="flexslider" id="carousel">
                     <ul class="slides">
                         <li>
-                            <?php echo get_the_post_thumbnail(get_the_ID(), 'full', array( 'class' => 'img-responsive' )); ?>
+                            <?php echo get_the_post_thumbnail(get_the_ID(), 'full', array( 'class' => 'img-responsive img-parallax', 'data-speed' => '1' )); ?>
                         </li>
                     <?php 
 
@@ -64,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     if ( $attachment_ids && has_post_thumbnail() ) {
                         foreach ( $attachment_ids as $attachment_id ) {
                             $full_size_image = wp_get_attachment_image_src( $attachment_id, 'full' );
-                            echo '<li><img src="' . $full_size_image[0] . '"></li>';
+                            echo '<li><img src="' . $full_size_image[0] . '" class="img-responsive img-parallax" data-speed="1"></li>';
                         }
                     }
                     ?>

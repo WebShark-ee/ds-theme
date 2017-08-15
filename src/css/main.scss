@@ -2572,14 +2572,21 @@ input:checked + .slider:before {
     margin: 0;
 }
 
+.flex-viewport,
+.flex-viewport ul,
+.flex-viewport li, {
+    max-height: 600px;
+}
+
 .flexslider-nav {
-    margin-top: 20px
+    margin-top: 20px;
 }
 
 .flexslider-nav img {
     cursor: pointer;
     display: block;
     opacity: 0.5;
+    position: absolute;
 }
 
 .flexslider-nav .flex-active-slide img {
