@@ -1606,3 +1606,25 @@ switch ( $args['type'] ) {
     }
 
 }
+
+add_action( 'wcml_client_currency', 'currency' );
+function currency( $current_currency ) {
+    global $woocommerce,$sitepress;
+ 
+    $currency = isset( $_GET['currency'] ) ? esc_attr( $_GET['currency'] ) : $current_currency;
+    $currency = strtoupper( $currency );
+    
+    $country = WC_Geolocation::geolocate_ip();
+    $currenct_country_list = array('USA','CAN','MEX');
+    if (in_array($country['country'], $currenct_country_list))
+    {
+        $currency = 'USD';
+    }
+    else {
+        $currency = 'EUR';
+    }
+ 
+    $woocommerce->session->set('client_currency', $currency);    
+ 
+    return $currency;
+}
