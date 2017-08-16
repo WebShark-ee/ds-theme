@@ -21,9 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-
+<div class="row">
 <?php wc_print_notices(); ?>
-
+</div>
 <?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
