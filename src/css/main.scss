@@ -2796,7 +2796,7 @@ input:checked + .slider:before {
         }
     }
 }
-.woocommerce-form-login {
+.woocommerce-form-login, .woocommerce form.register {
     background-color: #FFF;
     font-weight: 300;
     font-size: 1em;
