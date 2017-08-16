@@ -1376,6 +1376,23 @@ input:checked + .slider:before {
     }
 }
 
+.woocommerce-checkout .main-content-area .container {
+    background: #FFF;
+    box-sizing: border-box;
+}
+
+.woocommerce-checkout .main-content-area .container .container {
+    max-width: 100%;
+}
+
+.woocommerce-checkout .checkbox .input-checkbox {
+    margin: 8px 0 0 0 !important;
+}
+
+.woocommerce-checkout label span {
+    margin-left: 20px;
+}
+
 .container-checkout {
     background-color: #fff;
     margin-top: 20px;
@@ -2860,3 +2877,5 @@ input:checked + .slider:before {
         @extend .btn-default;
     }
 }
+
+
