@@ -37,7 +37,7 @@ get_header( 'shop' );
 
     <div class="container">
         <?php
-        if (!is_product_category('systems') && !$wp_query->is_search)
+        if (!is_product_category('systems') && !$wp_query->is_search && !is_shop())
         {
             ?>
         <div class="row row-accessories">
