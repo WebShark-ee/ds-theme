@@ -578,17 +578,10 @@ register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'twentyseventeen' ),
 ) );
 
-add_filter( 'woocommerce_product_tabs', 'reordered_wc_tabs', 98 );
-
-function reordered_wc_tabs( $tabs ) {
-    
-    if (!empty($tabs))
-    {
-        $tabs['description']['priority'] = 5;
-
-        return $tabs;
-    }
+function woocommerce_template_product_description() {
+    wc_get_template( 'single-product/tabs/description.php' );
 }
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_product_description', 20 );
 
 add_filter( 'woocommerce_product_tabs', 'specifications_tab' );
 function specifications_tab( $tabs ) {
@@ -884,6 +877,13 @@ function show_set_content() {
     echo '</ul>';
 }
 
+add_filter( 'woocommerce_product_tabs', 'reordered_wc_tabs', 98 );
+
+function reordered_wc_tabs( $tabs ) {
+    unset( $tabs['description'] );
+    return $tabs;
+}
+
 function ds_scripts() {
     wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBxCJNbIsEUuEipy1e7dBDxbnVHUO8UheU', array(), '3', true );
     wp_enqueue_script( 'complete', get_theme_file_uri( '/assets/js/complete.js' ), array( 'jquery' ), '2.1.2', true );
@@ -899,13 +899,6 @@ function ds_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'ds_scripts' );
 
-add_filter( 'woocommerce_product_tabs', 'woo_rename_tab', 98);
-function woo_rename_tab($tabs) {
-    if ($tabs['description']['title']){
-        $tabs['description']['title'] = 'Additional information';
-        return $tabs;
-    }
-}
 
 if( function_exists('acf_add_options_page') ) {
  

@@ -150,6 +150,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
                     add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 0 );
                     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+                    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
                     do_action( 'woocommerce_single_product_summary' );
                 ?>
 
