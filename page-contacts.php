@@ -59,6 +59,15 @@ get_header(); ?>
                     if( !empty($location) ):
                     ?>
                         <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
+                            <p>
+                                <?php echo get_sub_field('company'); ?>
+                            </p>
+                            <p>
+                                <?php echo get_sub_field('contact_person'); ?>
+                            </p>
+                            <p>
+                                <?php echo get_sub_field('contact'); ?>
+                            </p>
                             <p class="address">
                                 <?php echo get_sub_field('mailing_aadress'); ?>
                             </p>
