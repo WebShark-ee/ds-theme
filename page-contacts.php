@@ -34,7 +34,6 @@ get_header(); ?>
     endif;
     ?>
     
-    
     <div class="row row-about">
         <div class="col-md-12 header-grey-box">
             <h1>Contact Info</h1>
