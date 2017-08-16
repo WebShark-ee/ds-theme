@@ -42,6 +42,30 @@ get_header(); ?>
             <?php the_field('contact_info'); ?>
         </div>
     </div>
+    
+    <div class="row row-about">
+        <div class="col-md-12 header-grey-box">
+            <h1>Resellers</h1>
+        </div>
+        <div class="acf-map">
+        <?php
+        if( have_rows('resellers') ):
+            while ( have_rows('resellers') ) : the_row();
+            ?>
+            <div class="col-md-12">
+                <?php
+                $location = get_sub_field('map');
+                if( !empty($location) ):
+                ?>
+                    <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+                <?php endif; ?>
+            </div>
+            <?php
+            endwhile;
+        endif;
+        ?>
+        </div>
+    </div>
 </div>
 
 <?php get_footer();
