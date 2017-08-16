@@ -60,7 +60,7 @@ get_header(); ?>
                     ?>
                         <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
                             <p class="address">
-                                <?php get_sub_field('mailing_aadress'); ?>
+                                <?php echo get_sub_field('mailing_aadress'); ?>
                             </p>
                         </div>
                     <?php endif; ?>
