@@ -13,6 +13,10 @@ $('.img-parallax').each(function() {
         var winH = $(this).height();
         var parentH = imgParent.innerHeight();
 
+        jQuery('.flex-viewport').css('max-height', '600px');
+        jQuery('.flex-viewport ul').css('max-height', '600px');
+        jQuery('.flex-viewport li').css('max-height', '600px');
+
 
         // The next pixel to show on screen      
         var winBottom = winY + winH;

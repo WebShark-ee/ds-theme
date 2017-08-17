@@ -2592,7 +2592,7 @@ input:checked + .slider:before {
 .flex-viewport,
 .flex-viewport ul,
 .flex-viewport li, {
-    max-height: 600px;
+    max-height: 400px;
 }
 
 .flexslider-nav {
@@ -2898,4 +2898,7 @@ input:checked + .slider:before {
     margin-top: 10px;
     max-width: 150px;
     text-align: center;
+}
+.woocommerce a.remove {
+    line-height: 0.8;
 }
