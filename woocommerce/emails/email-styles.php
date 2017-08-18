@@ -104,7 +104,7 @@ table.td {
 
 table.td .td {
 	padding: 12px !important;
-	border: 2px solid #999;
+	border: 4px solid #EEEEEE !important;
 }
 
 #body_content td ul.wc-item-meta {
@@ -130,9 +130,10 @@ table.td .td {
 #body_content_inner {
 	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 150%;
+	font-size: 20px;
+	line-height: 26px;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
+	padding: 40px 0 25px;
 }
 
 .td {
