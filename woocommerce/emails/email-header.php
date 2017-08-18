@@ -26,8 +26,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
 		<title><?php echo get_bloginfo( 'name', 'display' ); ?></title>
+		<style type="text/css">
+			@media only screen and (max-width: 880px) {
+				.force-frame {
+					width: 100%!important;
+					max-width: 100%!important;
+				}
+				.force-narrow {
+					width: 15px!important;
+				}
+				.force-hide {
+					display: none!important;
+				}
+			}
+			@media only screen and (max-width: 550px) {
+				.force-title {
+					font-size: 24px!important;
+					line-height: 28px!important;
+				}
+				.force-text {
+					font-size: 12px!important;
+					line-height: 14px!important;
+				}
+			}
+		</style>
 	</head>
-	<body <?php echo is_rtl() ? 'rightmargin' : 'leftmargin'; ?>="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+	<body <?php echo is_rtl() ? 'rightmargin' : 'leftmargin'; ?>="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="margin: 0px; padding: 0px; background-color: #FEFEFE;">
 		<div id="wrapper" dir="<?php echo is_rtl() ? 'rtl' : 'ltr'?>">
 			<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
 				<tr>
@@ -39,18 +63,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 								}
 							?>
 						</div>
-						<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_container">
+						<table class="force-frame" border="0" cellpadding="0" cellspacing="0" width="880" align="center" style="margin: auto;">
 							<tr>
-								<td align="center" valign="top">
-									<!-- Header -->
-									<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_header">
+								<td background="http://projects.webshark.ee/digital-sputnik/header.png" bgcolor="#6D6E70" valign="top">
+								<!--[if gte mso 9]>
+								<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:880px;height:140px;">
+								<v:fill type="tile" src="http://projects.webshark.ee/digital-sputnik/header.png" color="#6D6E70" />
+								<v:textbox inset="0,0,0,0">
+								<![endif]-->
+								<div>
+									<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template_header">
 										<tr>
-											<td id="header_wrapper">
-												<h1><?php echo $email_heading; ?></h1>
+											<td class="force-narrow" style="line-height: 0px; font-size: 0px;" width="35">&nbsp;</td>
+											<td>
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tr>
+														<td height="30" style="height: 30px; line-height: 0px; font-size: 0px;">&nbsp;</td>
+													</tr>
+													<tr>
+														<td>
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+																<tr>
+																	<td class="force-title" valign="middle" style="font-family: Arial, Helvetica, sans-serif; font-size: 44px; line-height: 44px; color: #FFFFFF; font-weight: 600; vertical-align: middle;"><?php echo $email_heading; ?></td>
+																	<td style="line-height: 0px; font-size: 0px;" width="15">&nbsp;</td>
+																	<td width="160" style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; line-height: 26px; color: #FFFFFF; font-weight: 600;"><img src="http://projects.webshark.ee/digital-sputnik/logo.png" width="160" height="90" border="0" alt="Digital Sputnik" style="display: block;"></td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+													<tr>
+														<td height="20" style="height: 20px; line-height: 0px; font-size: 0px;">&nbsp;</td>
+													</tr>
+												</table>
 											</td>
+											<td class="force-narrow" style="line-height: 0px; font-size: 0px;" width="35">&nbsp;</td>
 										</tr>
 									</table>
-									<!-- End Header -->
+								</div>
+								<!--[if gte mso 9]>
+								</v:textbox>
+								</v:rect>
+								<![endif]-->
 								</td>
 							</tr>
 							<tr>
