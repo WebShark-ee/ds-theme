@@ -51,7 +51,6 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 
 #template_header {
-	background-color: <?php echo esc_attr( $base ); ?>;
 	border-radius: 3px 3px 0 0 !important;
 	color: <?php echo esc_attr( $base_text ); ?>;
 	border-bottom: 0;
