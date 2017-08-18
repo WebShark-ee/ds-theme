@@ -47,13 +47,11 @@ $text_align = is_rtl() ? 'right' : 'left';
 		</td>
 	</tr>
 	<tr>
-		<td>
-			<address class="address">
-				<?php echo ( $address = $order->get_formatted_billing_address() ) ? $address : __( 'N/A', 'woocommerce' ); ?>
-				<?php if ( $order->get_billing_phone() ) : ?>
-					<p><?php echo esc_html( $order->get_billing_phone() ); ?></p>
-				<?php endif; ?>
-			</address>
+		<td style="font-family: Arial, Helvetica, sans-serif; color: #737373; font-size: 1em; line-height: 1.4em; padding: 15px 0;">
+			<?php echo ( $address = $order->get_formatted_billing_address() ) ? $address : __( 'N/A', 'woocommerce' ); ?>
+			<?php if ( $order->get_billing_phone() ) : ?>
+				<p><?php echo esc_html( $order->get_billing_phone() ); ?></p>
+			<?php endif; ?>
 		</td>
 	</tr>
 	<tr>
