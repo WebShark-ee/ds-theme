@@ -23,11 +23,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 															</div>
 														</td>
+														<td class="force-narrow" style="line-height: 0px; font-size: 0px;" width="25">&nbsp;</td>
 													</tr>
 												</table>
 												<!-- End Content -->
 											</td>
-											<td class="force-narrow" style="line-height: 0px; font-size: 0px;" width="25">&nbsp;</td>
 										</tr>
 									</table>
 									<!-- End Body -->
