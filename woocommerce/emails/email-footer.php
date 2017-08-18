@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 											<td valign="top">
 												<table border="0" cellpadding="10" cellspacing="0" width="100%">
 													<tr>
-														<td height="20" style="height: 20px; line-height: 0px; font-size: 0px;">&nbsp;</td>
+														<td height="15" style="height: 15px; line-height: 0px; font-size: 0px;">&nbsp;</td>
 													</tr>
 													<tr>
 														<td colspan="2" valign="middle" id="credit">
