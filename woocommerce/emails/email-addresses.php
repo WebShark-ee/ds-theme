@@ -47,6 +47,16 @@ $text_align = is_rtl() ? 'right' : 'left';
 		</td>
 	</tr>
 	<tr>
+		<td>
+			<address class="address">
+				<?php echo ( $address = $order->get_formatted_billing_address() ) ? $address : __( 'N/A', 'woocommerce' ); ?>
+				<?php if ( $order->get_billing_phone() ) : ?>
+					<p><?php echo esc_html( $order->get_billing_phone() ); ?></p>
+				<?php endif; ?>
+			</address>
+		</td>
+	</tr>
+	<tr>
 		<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() && ( $shipping = $order->get_formatted_shipping_address() ) ) : ?>
 			<td class="td" style="text-align:<?php echo $text_align; ?>; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" valign="top" width="50%">
 				<h3><?php _e( 'Shipping address', 'woocommerce' ); ?></h3>
