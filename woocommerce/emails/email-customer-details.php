@@ -51,9 +51,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</tr>
 		<tr>
 			<td>
-				<ul>
+				<ul style="font-family: Arial, Helvetica, sans-serif; color: #737373; font-size: 1em; line-height: 1.4em; padding: 20px 0px; margin: 0px;">
 					<?php foreach ( $fields as $field ) : ?>
-						<li><strong><?php echo wp_kses_post( $field['label'] ); ?>:</strong> <span class="text"><?php echo wp_kses_post( $field['value'] ); ?></span></li>
+						<li style="font-family: Arial, Helvetica, sans-serif; color: #737373; font-size: 1em; line-height: 1.4em; padding: 0px; margin: 0px;"><strong><?php echo wp_kses_post( $field['label'] ); ?>:</strong> <span class="text"><?php echo wp_kses_post( $field['value'] ); ?></span></li>
 					<?php endforeach; ?>
 				</ul>
 			</td>

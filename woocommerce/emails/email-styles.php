@@ -36,7 +36,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 // !important; is a gmail hack to prevent styles being stripped if it doesn't like something.
 ?>
 #wrapper {
-	background-color: <?php echo esc_attr( $bg ); ?>;
+	background-color: #FEFEFE;
 	margin: 0;
 	padding: 70px 0 70px 0;
 	-webkit-text-size-adjust: none !important;
@@ -81,7 +81,6 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 
 #body_content {
-	background-color: <?php echo esc_attr( $body ); ?>;
 }
 
 #body_content table td {
@@ -100,6 +99,7 @@ table.td {
 	border-collapse: collapse;
 	padding: 12px !important;
 	border: none;
+	margin: 15px 0;
 }
 
 table.td .td {
