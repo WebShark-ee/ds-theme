@@ -96,8 +96,15 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 	padding: 0;
 }
 
-table .td {
+table.td {
+	border-collapse: collapse;
 	padding: 12px !important;
+	border: none;
+}
+
+table.td .td {
+	padding: 12px !important;
+	border: 2px solid #999;
 }
 
 #body_content td ul.wc-item-meta {
