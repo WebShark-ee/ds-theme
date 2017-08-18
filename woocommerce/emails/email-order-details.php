@@ -49,7 +49,29 @@ do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plai
 		</td>
 	</tr>
 <?php else : ?>
-	<h2><a class="link" href="<?php echo esc_url( admin_url( 'post.php?post=' . $order->get_id() . '&action=edit' ) ); ?>"><?php printf( __( 'Order #%s', 'woocommerce' ), $order->get_order_number() ); ?></a> (<?php printf( '<time datetime="%s">%s</time>', $order->get_date_created()->format( 'c' ), wc_format_datetime( $order->get_date_created() ) ); ?>)</h2>
+	<tr>
+		<td style="background: #6D6E70">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td style="line-height: 0px; font-size: 0px;" width="10">&nbsp;</td>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td height="15" style="height: 15px; line-height: 0px; font-size: 0px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="force-title" style="font-family: Arial, Helvetica, sans-serif; color: #FFFFFF; font-size: 44px; line-height: 44px;"><a class="link" href="<?php echo esc_url( admin_url( 'post.php?post=' . $order->get_id() . '&action=edit' ) ); ?>"><?php printf( __( 'Order #%s', 'woocommerce' ), $order->get_order_number() ); ?></a> (<?php printf( '<time datetime="%s">%s</time>', $order->get_date_created()->format( 'c' ), wc_format_datetime( $order->get_date_created() ) ); ?>)</td>
+							</tr>
+							<tr>
+								<td height="15" style="height: 15px; line-height: 0px; font-size: 0px;">&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+					<td style="line-height: 0px; font-size: 0px;" width="10">&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
 <?php endif; ?>
 
 <table class="td" cellspacing="0" cellpadding="6" style="width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" border="1">
