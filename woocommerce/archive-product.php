@@ -21,6 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' );
+
+wc_print_notices();
 ?>
 
 	<?php
@@ -31,8 +33,8 @@ get_header( 'shop' );
 		 * @hooked woocommerce_breadcrumb - 20
 		 * @hooked WC_Structured_Data::generate_website_data() - 30
 		 */
-        remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
-		do_action( 'woocommerce_before_main_content' );
+        //remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+		//do_action( 'woocommerce_before_main_content' );
 	?>
 
     <div class="container">
