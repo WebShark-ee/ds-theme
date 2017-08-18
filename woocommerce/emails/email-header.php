@@ -65,10 +65,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 						<table class="force-frame" border="0" cellpadding="0" cellspacing="0" width="880" align="center" style="margin: auto;">
 							<tr>
-								<td background="http://projects.webshark.ee/digital-sputnik/header.png" bgcolor="#6D6E70" valign="top">
+								<td background="<?php echo get_template_directory_uri(); ?>/woocommerce/emails/images/header.png" bgcolor="#6D6E70" valign="top">
 								<!--[if gte mso 9]>
 								<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:880px;height:140px;">
-								<v:fill type="tile" src="http://projects.webshark.ee/digital-sputnik/header.png" color="#6D6E70" />
+								<v:fill type="tile" src="<?php echo get_template_directory_uri(); ?>/woocommerce/emails/images/header.png" color="#6D6E70" />
 								<v:textbox inset="0,0,0,0">
 								<![endif]-->
 								<div>
@@ -86,7 +86,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 																<tr>
 																	<td class="force-title" valign="middle" style="font-family: Arial, Helvetica, sans-serif; font-size: 44px; line-height: 44px; color: #FFFFFF; font-weight: 600; vertical-align: middle;"><?php echo $email_heading; ?></td>
 																	<td style="line-height: 0px; font-size: 0px;" width="15">&nbsp;</td>
-																	<td width="160" style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; line-height: 26px; color: #FFFFFF; font-weight: 600;"><img src="http://projects.webshark.ee/digital-sputnik/logo.png" width="160" height="90" border="0" alt="Digital Sputnik" style="display: block;"></td>
+																	<td width="160" style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; line-height: 26px; color: #FFFFFF; font-weight: 600;"><img src="<?php echo get_template_directory_uri(); ?>/woocommerce/emails/images/logo.png" width="160" height="90" border="0" alt="Digital Sputnik" style="display: block;"></td>
 																</tr>
 															</table>
 														</td>
