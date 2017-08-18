@@ -1620,3 +1620,20 @@ function currency( $current_currency ) {
         return $currency;
     }
 }
+
+add_action( 'wp_footer', 'cart_update_qty_script' );
+function cart_update_qty_script() {
+    if (is_cart()) :
+        ?>
+        <script type="text/javascript">
+            (function($){
+                $(function(){
+                    $('div.woocommerce').on( 'change', '.qty', function(){
+                        $("[name='update_cart']").trigger('click');
+                    });
+                });
+            })(jQuery);
+        </script>
+        <?php
+    endif;
+}
