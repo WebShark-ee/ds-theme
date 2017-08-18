@@ -80,10 +80,6 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 	padding: 0 48px 48px 48px;
 }
 
-table .td {
-	padding: 12px;
-}
-
 #body_content {
 	background-color: <?php echo esc_attr( $body ); ?>;
 }
@@ -98,6 +94,10 @@ table .td {
 
 #body_content table td th {
 	padding: 0;
+}
+
+table .td {
+	padding: 12px !important;
 }
 
 #body_content td ul.wc-item-meta {
