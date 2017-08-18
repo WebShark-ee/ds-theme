@@ -80,6 +80,10 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 	padding: 0 48px 48px 48px;
 }
 
+table .td {
+	padding: 12px;
+}
+
 #body_content {
 	background-color: <?php echo esc_attr( $body ); ?>;
 }
