@@ -85,15 +85,15 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 
 #body_content table td {
-	padding: 48px;
+	padding: 0;
 }
 
 #body_content table td td {
-	padding: 12px;
+	padding: 0;
 }
 
 #body_content table td th {
-	padding: 12px;
+	padding: 0;
 }
 
 #body_content td ul.wc-item-meta {
