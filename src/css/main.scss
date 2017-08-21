@@ -2590,16 +2590,16 @@ input:checked + .slider:before {
     align-items: center
 }
 
-.flexslider {
+#carousel, .flexslider {
     background: none;
-    border: 0;
+    border: none;
     margin: 0;
 }
 
-.flex-viewport,
-.flex-viewport ul,
-.flex-viewport li, {
-    max-height: 400px;
+#carousel,
+#carousel ul,
+#carousel li, {
+    max-height: 45vh;
 }
 
 .flexslider-nav {

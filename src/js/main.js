@@ -1,6 +1,5 @@
 // I know that the code could be better.
 // If you have some tips or improvement, please let me know.
-
 $('.img-parallax').each(function() {
 
     var img = $(this);
@@ -12,15 +11,10 @@ $('.img-parallax').each(function() {
         var winY = $(this).scrollTop();
         var winH = $(this).height();
         var parentH = imgParent.innerHeight();
-
-        jQuery('.flex-viewport').css('max-height', '600px');
-        jQuery('.flex-viewport ul').css('max-height', '600px');
-        jQuery('.flex-viewport li').css('max-height', '600px');
-
+        var scrollHeight = jQuery(window).scrollTop();
 
         // The next pixel to show on screen      
         var winBottom = winY + winH;
-
         // If block is shown on screen
         if (winBottom > imgY && winY < imgY + parentH) {
             // Number of pixels shown after block appear
@@ -34,37 +28,34 @@ $('.img-parallax').each(function() {
             transform: 'translateY(-' + imgPercent + '%)'
         });
     }
-    $(document).on({
+    $(window).on({
         scroll: function() {
-            parallaxImg();
+            //parallaxImg();
         },
         ready: function() {
-            parallaxImg();
+            //parallaxImg();
         }
     });
 });
 
 
-if($(window).width() > 1200) {
-  function init() {
 
-    window.addEventListener('scroll', function(e){
+
+if($(window).width() > 1200) {
+    function init() {
+        window.addEventListener('scroll', function(e) {
         var distanceY = window.pageYOffset || document.documentElement.scrollTop,
             shrinkOn = 10,
             navbar = $(".navbar-default");
-        if (distanceY > shrinkOn) {
-            $(navbar).addClass('navbar-fixed-top')
-        } else {
-
-            if ($(navbar).hasClass('navbar-fixed-top')) {
-                  
-                  $(navbar).removeClass('navbar-fixed-top')
-                
+            if (distanceY > shrinkOn) {
+                $(navbar).addClass('navbar-fixed-top');
+            } else {
+                if ($(navbar).hasClass('navbar-fixed-top'))
+                    $(navbar).removeClass('navbar-fixed-top');
             }
-        }
-    });
-}
-window.onload = init();
+        });
+    }
+    window.onload = init();
 }
 
 
@@ -198,6 +189,18 @@ jQuery(function() {
 });
 
 jQuery(function() {
+    // SET PRODUCT PAGE'S CAROUSEL's HEIGHT
+    var carouselHeight = 0.45 * jQuery(window).innerHeight();
+    var soughtHeight = carouselHeight + jQuery(window).scrollTop();
+    jQuery(window).scroll(function() {
+        var imgHeight = jQuery('.img-parallax').innerHeight();
+        if (soughtHeight < carouselHeight + jQuery(window).scrollTop()) {
+            soughtHeight = carouselHeight + jQuery(window).scrollTop();
+            if (carouselHeight < imgHeight) {
+                jQuery('#carousel, #carousel ul, #carousel li').css('max-height', soughtHeight+'px');
+            }
+        }
+    });
     if (jQuery(window).width() > 1200) {
         
         if (jQuery('#main-content').height() > jQuery(window).height() - 40 ){

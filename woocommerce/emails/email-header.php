@@ -62,6 +62,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									echo '<p style="margin-top:0;"><img src="' . esc_url( $img ) . '" alt="' . get_bloginfo( 'name', 'display' ) . '" /></p>';
 								}
 							?>
+							
 						</div>
 						<table class="force-frame" border="0" cellpadding="0" cellspacing="0" width="880" align="center" style="margin: auto;">
 							<tr>
