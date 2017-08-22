@@ -76,7 +76,7 @@ wc_print_notices();
                            }
                            echo $term->slug . '"'; 
                         }
-                        echo 'class="btn btn-primary';
+                        echo ' class="btn btn-primary';
                         if (in_array($term->slug, $compatatible_with_url))
                         {
                             echo ' btn-disabled';
