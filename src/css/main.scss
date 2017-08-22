@@ -2818,14 +2818,18 @@ input:checked + .slider:before {
 }
 .coupon{
     input {
-        border: 1px solid #6d6d6d !important;
-        padding: 0 7px !important;
         width: 175px !important;
-        font-size: 0.93em !important; 
+
     }
-    .button {
-        padding: 4px 7px !important;
+    .form-control {
+        display: inline;
+        padding: 3px 6px;
+        height: auto;
     }
+}
+.woocommerce-cart table.cart input {
+    line-height: 1.4!important;
+    height: 27px;
 }
 .woocommerce-account {
     .main-content-area {
