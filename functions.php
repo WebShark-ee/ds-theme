@@ -1024,6 +1024,7 @@ function ws_product_sort_init() {
 }
 
 function ws_ajax_products() {
+
     $all_tags = stripslashes( $_POST['all_tags'] );
     $current_cat = stripslashes( $_POST['current_cat'] );
     if ($all_tags)
@@ -1050,7 +1051,8 @@ function ws_ajax_products() {
     $wp_query = null;
     $wp_query = new WP_Query( $args );
     if ($wp_query->have_posts()) :
-        if ( $wp_query->have_posts() ) {
+        if ( $wp_query->have_posts() ) {            
+            $page_url = home_url('/');
             ?>
             <div class="animated-grid">
             <?php
@@ -1065,7 +1067,7 @@ function ws_ajax_products() {
                 {
                     $url_comp = '/?compatatible_with=' . $all_tags;
                 }
-                $page_url = home_url('/');
+                
                 echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
                     'base'         => esc_url_raw($page_url) . 'product-category/' . $current_cat . '%_%' . $url_comp,
                     'format'       => '/page/%#%',

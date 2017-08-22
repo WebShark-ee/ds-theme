@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
-
+global $redirect_url_filter;
 // Ensure visibility
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;

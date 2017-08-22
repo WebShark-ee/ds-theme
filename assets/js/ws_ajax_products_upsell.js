@@ -39,6 +39,8 @@ jQuery(function() {
             },
             success: function( data ) {
                 jQuery('#product_sort').html(data);
+                var new_cart_link = jQuery('.loop-cart').attr('href').replace('/wp-admin/admin-ajax.php', '');
+                jQuery('.loop-cart').attr('href', new_cart_link)
                 var $grid = jQuery('.animated-grid');
                 var grid = new AnimatedGrid($grid);                
                 grid.visible = false;
