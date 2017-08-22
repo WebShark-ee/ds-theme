@@ -39,7 +39,7 @@ jQuery(function() {
             },
             success: function( data ) {
                 jQuery('#products_sort').html(data);
-                var new_cart_link = jQuery('.loop-cart').attr('href').replace('/wp-admin/admin-ajax.php', '');
+                var new_cart_link = jQuery('.loop-cart').attr('href').replace('/wp-admin/admin-ajax.php', '/product-category/' + current_cat + '/');
                 jQuery('.loop-cart').attr('href', new_cart_link)
                 var $grid = jQuery('.animated-grid');
                 var grid = new AnimatedGrid($grid);                
