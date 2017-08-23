@@ -1,44 +1,3 @@
-// I know that the code could be better.
-// If you have some tips or improvement, please let me know.
-jQuery('.img-parallax').each(function() {
-
-    var img = jQuery(this);
-    var imgParent = jQuery(this).parent();
-
-    function parallaxImg() {
-        var speed = img.data('speed');
-        var imgY = imgParent.offset().top;
-        var winY = jQuery(this).scrollTop();
-        var winH = jQuery(this).height();
-        var parentH = imgParent.innerHeight();
-        var scrollHeight = jQuery(window).scrollTop();
-
-        // The next pixel to show on screen      
-        var winBottom = winY + winH;
-        // If block is shown on screen
-        if (winBottom > imgY && winY < imgY + parentH) {
-            // Number of pixels shown after block appear
-            var imgBottom = ((winBottom - imgY) * speed);
-            // Max number of pixels until block disappear
-            var imgTop = winH + parentH;
-            // Porcentage between start showing until disappearing
-            var imgPercent = imgBottom / imgTop * 100  - speed * 50;
-        }
-        img.css({
-            transform: 'translateY(-' + imgPercent + '%)'
-        });
-    }
-    jQuery(window).on({
-        scroll: function() {
-            //parallaxImg();
-        },
-        ready: function() {
-            //parallaxImg();
-        }
-    });
-});
-
-
 jQuery(function() {
     jQuery(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
@@ -47,7 +6,6 @@ jQuery(function() {
 });
 
 jQuery(function() {
-
     // SET PRODUCT PAGE'S CAROUSEL's HEIGHT
     var carouselHeight = 0.45 * jQuery(window).innerHeight();
     var soughtHeight = carouselHeight + jQuery(window).scrollTop();
@@ -81,8 +39,6 @@ jQuery(function() {
 
         }
     }
-
-
     jQuery('#currency_state').on('click',function(){
 
         if(jQuery(this).prop('checked')) {
