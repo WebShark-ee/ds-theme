@@ -1639,3 +1639,15 @@ function cart_update_qty_script() {
         <?php
     endif;
 }
+
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+    ob_start();
+    ?>
+    <span class="cart-count pull-right"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+    <?php
+
+    $fragments['span.cart-count'] = ob_get_clean();
+
+    return $fragments;
+}

@@ -155,15 +155,8 @@
                         ?>
                         <ul class="nav navbar-nav navbar-right" id="nav-bottom-right">
                             <li>
-                                <?php
-                                $myaccount_page_id = get_option( 'woocommerce_myaccount_page_id' );
-                                $myaccount_page_url = get_permalink( $myaccount_page_id );
-                                if ( $myaccount_page_id && !is_user_logged_in()) {
-                                    
-                                }
-                                ?>
                                 <a href="<?php echo wc_get_cart_url(); ?>" class="cart-link pull-right">
-                                <span class="pull-right"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                                <span class="cart-count pull-right"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
                                 <svg class="svg-cart pull-left">
                                     <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/img/sprites.svg#svgCart" />
                                 </svg>
