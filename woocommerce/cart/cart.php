@@ -117,8 +117,14 @@ do_action( 'woocommerce_before_cart' ); ?>
 										'min_value'   => '0',
 									), $_product, false );
 								}
-
+                                
 								echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
+                                
+                                $result_c = wc_pb_is_bundled_cart_item( $cart_item );
+                                if ($result_c == true){
+                                    //print_r($cart_item);
+                                    echo '<a href="?add-to-cart=' . $product_id . '">+</a>';
+                                }
 							?>
 						</td>
 
