@@ -123,7 +123,8 @@ do_action( 'woocommerce_before_cart' ); ?>
                                 $result_c = wc_pb_is_bundled_cart_item( $cart_item );
                                 if ($result_c == true){
                                     //print_r($cart_item);
-                                    echo '<a href="?add-to-cart=' . $product_id . '">+</a>';
+                                    $add_product_price = $_product->get_price($product_id);
+                                    echo '<a href="?add-to-cart=' . $product_id . '" title="+ ' . $add_product_price . '">+</a>';
                                 }
 							?>
 						</td>
