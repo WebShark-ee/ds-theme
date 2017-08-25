@@ -124,7 +124,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                                 if ($result_c == true){
                                     //print_r($cart_item);
                                     $add_product_price = get_post_meta( $product_id, '_regular_price', true);
-                                    echo ' <a href="?add-to-cart=' . $product_id . '" title="+ ' . $add_product_price . '">+</a>';
+                                    echo ' <a href="?add-to-cart=' . $product_id . '"  data-toggle="tooltip" data-placement="right" title="+ ' . $add_product_price . '">Add</a>';
                                 }
 							?>
 						</td>
