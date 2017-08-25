@@ -7,7 +7,7 @@ jQuery(function() {
 
 jQuery(function() {
     // SET PRODUCT PAGE'S CAROUSEL's HEIGHT
-    var carouselHeight = 0.55 * jQuery(window).innerHeight();
+    var carouselHeight = 0.70 * jQuery(window).innerHeight();
     var soughtHeight = carouselHeight + jQuery(window).scrollTop();
     jQuery(window).scroll(function() {
         var imgHeight = jQuery('.img-parallax').innerHeight();
