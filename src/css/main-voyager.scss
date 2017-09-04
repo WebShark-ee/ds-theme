@@ -109,7 +109,7 @@ $grey: #BFBFBF;
     .img-centered {
         margin: auto;
     }
-    a {
+    a.btn-red, a.btn-grey {
         display: inline-block;
         padding: 6px 14px;
         -webkit-user-select: none;
@@ -122,6 +122,9 @@ $grey: #BFBFBF;
         text-decoration: none;
         text-align: center;
         background-color: #FF1124;
+    }
+    a.btn-grey {
+        background: #434345
     }
     .last-button {
         margin: 80px 0 50px;

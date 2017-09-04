@@ -11,7 +11,7 @@ get_header(); ?>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/voyager.jpg">
         <div class="row">
             <div class="col text-center">
-                <a href="https://igg.me/at/dsvoyager/x/16978930">check out our indiegogo campaign &gt;</a>
+                <a class="btn-red" href="//digitalsputnik.us8.list-manage.com/subscribe/post?u=6c09020492f529dfb0482d6cf&amp;id=57d32f1528">Join Voyager mailinglist &gt;</a><a class="btn-grey" href="https://igg.me/at/dsvoyager/x/16978930">indiegogo campaign (finished) &gt;</a>
             </div>
         </div>
     </div>
