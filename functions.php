@@ -1601,7 +1601,7 @@ switch ( $args['type'] ) {
     }
 
 }
-
+/*
 add_action( 'wcml_client_currency', 'currency' );
 function currency( $current_currency ) {
     if (!is_admin()) {
@@ -1622,7 +1622,7 @@ function currency( $current_currency ) {
         return $currency;
     }
 }
-
+*/
 add_action( 'wp_footer', 'cart_update_qty_script' );
 function cart_update_qty_script() {
     if (is_cart()) :

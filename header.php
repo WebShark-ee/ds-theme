@@ -67,12 +67,14 @@
                         </div>
                         <div class="col-xs-4">
                             <div class="li-switch">
-                                <span class="switch-span-euro active">€</span>
-                                <label class="switch">
-                                    <input class="input-switch" type="checkbox">
-                                    <div class="slider round"></div>
-                                </label>
-                                <span class="switch-span-dollar">$</span>
+                                <form id="currency_switcher">
+									<span class="switch-span-euro active">€</span>
+									<label class="switch">
+										<input class="input-switch" type="checkbox">
+										<div class="slider round"></div>
+									</label>
+									<span class="switch-span-dollar">$</span>
+								</form>
                             </div>
                         </div>
                     </div>
