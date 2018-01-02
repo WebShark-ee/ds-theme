@@ -17,12 +17,45 @@ body {
         background-color: #000
     }
 }
+
+
+.tab-header {
+
+}
+.tab-country {
+    display: none;
+    .col-md-3 {
+        padding-bottom: 40px;
+    }
+    .header-grey-box {
+        margin-bottom: 0;
+    }
+}
+.tab-open {
+    display: block;
+}
+
+
+
+
+
+
 a:hover{
     text-decoration: none;
 }
 .home {
     .navbar-default {
         border-bottom: 3px solid #FFF;
+    }
+}
+
+.white-box {
+    background: #fff;
+    padding: 15px;
+    p {
+      &:last-child {
+          margin-bottom: 0;
+      }  
     }
 }
 
@@ -1247,7 +1280,7 @@ input:checked + .slider:before {
 
 .acf-map {
     height: 500px;
-    margin: 0 -15px;
+    margin: 20px -15px;
 }
 
 .map-info {

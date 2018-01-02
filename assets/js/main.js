@@ -6,6 +6,15 @@ jQuery(function() {
 });
 
 jQuery(function() {
+
+    jQuery('.tab-header').on('click',function() {
+        jQuery('.tab-country').removeClass('tab-open');
+        var currIndex = jQuery('.tab-header').index(this);
+        jQuery(jQuery('.tab-country')[currIndex]).addClass('tab-open');
+
+    });
+
+
     // SET PRODUCT PAGE'S CAROUSEL's HEIGHT
     var carouselHeight = 0.70 * jQuery(window).innerHeight();
     var soughtHeight = carouselHeight + jQuery(window).scrollTop();

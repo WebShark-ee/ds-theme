@@ -109,22 +109,30 @@ $grey: #BFBFBF;
     .img-centered {
         margin: auto;
     }
-    a.btn-red, a.btn-grey {
-        display: inline-block;
-        padding: 6px 14px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        color: #FFF;
-        font-size: 18px;
-        font-weight: 300;
-        text-decoration: none;
-        text-align: center;
-        background-color: #FF1124;
-    }
-    a.btn-grey {
-        background: #434345
+    .row-bottom-border {
+        border-bottom: 1px solid #6d6d6d;
+        a {
+            display: block;
+            padding: 6px 14px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: $cyan;
+            font-size: 18px;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            @media (min-width: 950px) {
+                display: inline-block;
+            }
+        }
+        a.white {
+            color: #fff;
+        }
+        a.grey {
+            color: #b4b4b4;
+        }
     }
     .last-button {
         margin: 80px 0 50px;
