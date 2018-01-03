@@ -24,9 +24,21 @@ body {
 }
 .tab-country {
     display: none;
-    .col-md-3 {
-        padding-bottom: 40px;
+    [class*=col] {
+        [class*=col] {
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            &:nth-child(4) {
+                border-right: none;
+            }
+            @media (min-width: 992px) {
+                border-right: 1px solid #6e6e6e;
+                border-bottom: none;
+            }
+        }
     }
+    
     .header-grey-box {
         margin-bottom: 0;
     }
