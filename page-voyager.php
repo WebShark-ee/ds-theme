@@ -12,7 +12,25 @@ get_header(); ?>
         <div class="row">
             <div class="col row-bottom-border">
                 <?php
-                wp_nav_menu( array( 'menu' => 'voyager', 'theme_location' => 'voyager', 'container' => '',  'echo' => true, 'items_wrap' => '%3$s' ) );
+                wp_nav_menu(array(
+                    'theme_location'  => 'voyager',
+                    'menu'            => '',
+                    'container'       => '',
+                    'container_class' => '',
+                    'container_id'    => '',
+                    'menu_class'      => '',
+                    'menu_id'         => '',
+                    'echo'            => true,
+                    'fallback_cb'     => 'wp_page_menu',
+                    'before'          => '',
+                    'after'           => '',
+                    'link_before'     => '',
+                    'link_after'      => '',
+                    'items_wrap'      => '%3$s',		
+                    'depth'           => 0,
+                    'walker'          => new Description_Walker
+                    ) 
+                );
                 ?>
             </div>
         </div>
