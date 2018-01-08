@@ -14,7 +14,7 @@ get_header(); ?>
                 <?php
                 wp_nav_menu(array(
                     'theme_location'  => 'voyager',
-                    'menu'            => '',
+                    'menu'            => 'voyager',
                     'container'       => '',
                     'container_class' => '',
                     'container_id'    => '',
