@@ -11,10 +11,9 @@ get_header(); ?>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/voyager.jpg">
         <div class="row">
             <div class="col row-bottom-border">
-                <a href="#">Pre-order</a>
-                <a href="#">indiegogo campaign (finished)</a>
-                <a class="white" href="//digitalsputnik.us8.list-manage.com/subscribe/post?u=6c09020492f529dfb0482d6cf&amp;id=57d32f1528">Join Voyager mailinglist</a>
-                <a class="grey" href="https://igg.me/at/dsvoyager/x/16978930">indiegogo campaign (finished)</a>
+                <?php
+                wp_nav_menu( array( 'theme_location' => 'voyager', 'items_wrap' => '%3$s' ) );
+                ?>
             </div>
         </div>
     </div>
