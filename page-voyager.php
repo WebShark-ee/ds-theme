@@ -10,8 +10,11 @@ get_header(); ?>
     <div class="container">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/voyager.jpg">
         <div class="row">
-            <div class="col text-center">
-                <a class="btn-red" href="//digitalsputnik.us8.list-manage.com/subscribe/post?u=6c09020492f529dfb0482d6cf&amp;id=57d32f1528">Join Voyager mailinglist &gt;</a><a class="btn-grey" href="https://igg.me/at/dsvoyager/x/16978930">indiegogo campaign (finished) &gt;</a>
+            <div class="col row-bottom-border">
+                <a href="#">Pre-order</a>
+                <a href="#">indiegogo campaign (finished)</a>
+                <a class="white" href="//digitalsputnik.us8.list-manage.com/subscribe/post?u=6c09020492f529dfb0482d6cf&amp;id=57d32f1528">Join Voyager mailinglist</a>
+                <a class="grey" href="https://igg.me/at/dsvoyager/x/16978930">indiegogo campaign (finished)</a>
             </div>
         </div>
     </div>
