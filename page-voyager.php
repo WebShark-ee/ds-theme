@@ -12,7 +12,7 @@ get_header(); ?>
         <div class="row">
             <div class="col row-bottom-border">
                 <?php
-                wp_nav_menu( array( 'theme_location' => 'voyager', 'items_wrap' => '%3$s' ) );
+                wp_nav_menu( array( 'menu' => 'voyager', 'theme_location' => 'voyager', 'container' => '',  'items_wrap' => '%3$s' ) );
                 ?>
             </div>
         </div>
