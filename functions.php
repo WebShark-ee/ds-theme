@@ -462,7 +462,7 @@ function twentyseventeen_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
 
-remove_action('wp_head', 'enqueue_frontend_scripts');
+remove_action('wp_enqueue_scripts', 'enqueue_frontend_scripts');
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
