@@ -2972,8 +2972,7 @@ input:checked + .slider:before {
     line-height: 0.8;
 }
 
-
-.woo_quote_button {
+ body .woo_quote_button {
     @extend .btn;
     @extend .btn-info;
 }
