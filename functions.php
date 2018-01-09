@@ -466,7 +466,7 @@ function wp_remove_head_resources() {
     wp_deregister_style('woo-quote-frontend-css-css');
 }
 
-add_action('wp_print_styles', 'wp_remove_head_resources');
+add_action('wp_print_styles', 'wp_remove_head_resources', 100);
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images.
