@@ -463,7 +463,7 @@ function twentyseventeen_scripts() {
 add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
 
 function wp_remove_head_resources() {
-    wp_deregister_style('woo-quote-frontend-css-css');
+    wp_deregister_style('woo-quote-frontend-css');
 }
 
 add_action('wp_print_styles', 'wp_remove_head_resources', 100);
