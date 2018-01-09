@@ -459,11 +459,10 @@ function twentyseventeen_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-    
-    wp_dequeue_style('woo-quote-frontend-css-css');
-    wp_deregister_style('woo-quote-frontend-css-css');
 }
 add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
+
+wp_dequeue_style('woo-quote-frontend-css-css');
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
