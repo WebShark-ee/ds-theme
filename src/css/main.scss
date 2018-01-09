@@ -2855,7 +2855,7 @@ input:checked + .slider:before {
         width: auto !important;
         border-radius: 0 !important;
         padding: 4px 7px !important;
-        margin-right: 50px !important;
+        margin-right: 0 !important;
         &:hover {
             color: #FFF !important;
         }
@@ -2970,4 +2970,10 @@ input:checked + .slider:before {
 }
 .woocommerce a.remove {
     line-height: 0.8;
+}
+
+
+.woo_quote_button {
+    @extend .btn;
+    @extend .btn-info;
 }
