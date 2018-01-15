@@ -33,7 +33,7 @@ if ($redirect_url_filter != '')
 }
 
 echo apply_filters( 'woocommerce_loop_add_to_cart_link',
-	sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="pull-right loop-cart"><svg class="svg-cart-plus"><use xlink:href="' . get_stylesheet_directory_uri() . '/img/sprites.svg#svgcartplus" /></svg></a>',
+	sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="pull-right loop-cart add_to_cart_button ajax_add_to_cart"><svg class="svg-cart-plus"><use xlink:href="' . get_stylesheet_directory_uri() . '/img/sprites.svg#svgcartplus" /></svg></a>',
 		esc_url( $add_to_cart_url_custom ),
 		esc_attr( isset( $quantity ) ? $quantity : 1 ),
 		esc_attr( $product->get_id() ),

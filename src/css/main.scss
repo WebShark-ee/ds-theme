@@ -2976,3 +2976,7 @@ input:checked + .slider:before {
     @extend .btn;
     @extend .btn-info;
 }
+
+.added_to_cart {
+    display: none;
+}
