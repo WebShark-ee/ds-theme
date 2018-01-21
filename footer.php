@@ -20,6 +20,9 @@
                         <li><a href="tel:+372 63 52 477">EU + 372 63 52 477</a></li>
                         <li><span class="coma">,</span></li>
                         <li><a href="tel:+ 1 818 262 9284">USA + 1 818 262 9284</a></li>
+                        <li>
+                            <a href="#terms_condition" data-toggle="modal" data-target="#terms_condition">Terms and conditions</a>
+                        </li>
                     </ul>
                     <ul class="nav navbar-nav pull-right footer-nav-right">
                         <?php if (get_field('instagram_url', 'option')) { ?>
@@ -70,6 +73,26 @@
                     </ul>
                 </div>
             </footer>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="terms_condition" tabindex="-1" role="dialog" aria-labelledby="terms_condition">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form class="form-horizontal">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Terms and conditions</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <?php if (get_field('terms_and_condition', 'option')) {
+                            the_field('terms_and_condition', 'option');
+                        } ?>
+
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     
