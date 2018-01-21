@@ -1682,3 +1682,20 @@ class Description_Walker extends Walker_Nav_Menu
     }
 }
 
+/**
+* Add the field to the checkout
+**/
+add_action('woocommerce_proceed_to_checkout', 'my_custom_checkout_field', 40);
+
+function my_custom_checkout_field() {
+    echo '<div id="terms_and_condition_check" class="pull-right">';
+
+    woocommerce_form_field( 'my_field_name', array(
+        'type'          => 'checkbox',
+        'class'        => array('my-field-class form-row-wide'),
+        'label'        => __('<a href="#terms_condition" data-toggle="modal" data-target="#terms_condition">Accept terms and conditions</a>'),
+        'required'        => true,
+    ));
+
+    echo '</div>';
+}
