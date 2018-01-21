@@ -17,9 +17,9 @@
             <footer id="footer-default">
                 <div class="container nav-container nav-bg">
                     <ul class="nav navbar-nav footer-nav-left">
-                        <li><a href="#">EU + 372 63 52 477</a></li>
+                        <li><a href="tel:+372 63 52 477">EU + 372 63 52 477</a></li>
                         <li><span class="coma">,</span></li>
-                        <li><a href="#">USA + 1 818 262 9284</a></li>
+                        <li><a href="tel:+ 1 818 262 9284">USA + 1 818 262 9284</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right footer-nav-right">
                         <?php if (get_field('instagram_url', 'option')) { ?>

@@ -2977,6 +2977,10 @@ input:checked + .slider:before {
     @extend .btn-info;
 }
 
-.added_to_cart {
-    display: none;
+.woocommerce {
+    a {
+        &.added_to_cart {
+            display: none;
+        }
+    }
 }
