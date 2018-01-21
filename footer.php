@@ -77,7 +77,7 @@
     </div>
     
     <div class="modal fade" id="terms_condition" tabindex="-1" role="dialog" aria-labelledby="terms_condition">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <form class="form-horizontal">
                     <div class="modal-header">
