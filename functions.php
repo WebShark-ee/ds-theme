@@ -1699,3 +1699,13 @@ function my_custom_checkout_field() {
 
     echo '</div>';
 }
+
+add_action('woocommerce_proceed_to_checkout', 'my_custom_checkout_field_process', 50);
+ 
+function my_custom_checkout_field_process() {
+    global $woocommerce;
+ 
+    // Check if set, if its not set add an error.
+    if ($_POST['my_field_name'] == ' ' || $_POST['my_field_name'] == '0')
+         $woocommerce->add_error( __('Please agree to my checkbox.') );
+}

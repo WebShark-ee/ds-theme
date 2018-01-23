@@ -2983,4 +2983,23 @@ input:checked + .slider:before {
             display: none;
         }
     }
+    
+    form {
+        .form-row {
+            .input-checkbox {
+                position: relative;
+                margin-right: 5px;
+            }
+        }
+    }
+    
+    .cart_totals {
+        .checkbox {
+            margin-right: 20px;
+            line-height: 1;
+            a {
+                text-decoration: underline
+            }
+        }
+    }
 }
