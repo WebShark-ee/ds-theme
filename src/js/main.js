@@ -8,8 +8,8 @@ jQuery(function() {
 jQuery(function() {
 
     jQuery('.tab-header').on('click',function() {
-        jQuery('.tab-country').addClass('hidden');
-        jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden');
+        jQuery('.tab-country').addClass('hidden').hide();
+        jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden').show();
         return false;
     });
 
