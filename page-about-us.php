@@ -4,10 +4,13 @@ Template Name: About us page
 Template Post Type: page
 */
 
-get_header(); ?>
+get_header();
+
+$hero_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
+?>
 
 <div class="container-fluid">
-    <div class="row row-hero">
+    <div class="row row-hero" style="background: url(<?php echo $hero_image; ?> center no-repeat)">
         <div id="hero" class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-7">
             <?php the_content(); ?>
         </div>
