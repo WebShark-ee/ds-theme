@@ -26,7 +26,7 @@ get_header(); ?>
                 <?php endif; ?>
             </div>
             <div class="col-md-12 map-info">
-                  <?php echo get_sub_field('address'); ?>
+                <?php echo get_sub_field('address'); ?>
             </div>
         </div>
         <?php
