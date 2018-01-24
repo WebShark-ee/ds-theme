@@ -10,6 +10,7 @@ jQuery(function() {
     jQuery('.tab-header').on('click',function() {
         jQuery('.tab-country').addClass('hidden');
         jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden');
+        return false;
     });
 
     // SET PRODUCT PAGE'S CAROUSEL's HEIGHT
