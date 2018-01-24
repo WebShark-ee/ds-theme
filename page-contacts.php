@@ -142,7 +142,7 @@ get_header(); ?>
                                         <strong><?php echo get_sub_field('company'); ?></strong>
                                     </p>
                                     <p>
-                                        <?php echo get_sub_field('address'); ?>
+                                        <?php // echo get_sub_field('address'); ?>
                                     </p>
                                     <p class="address">
                                         <a href="mailto:<?php echo get_sub_field('mail'); ?>"><?php echo get_sub_field('mail'); ?></a><br />
