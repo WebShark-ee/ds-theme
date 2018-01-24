@@ -221,7 +221,7 @@ jQuery(function() {
         var marker = new google.maps.Marker({
             position	: latlng,
             map			: map,
-            icon: 'http://projects.silvermuru.ee/ds/cms/wp-content/themes/ds/img/ds_pin.png'
+            icon: 'https://projects.silvermuru.ee/ds/cmsc/wp-content/themes/ds/img/ds_pin.png'
         });
 
         // add to array
@@ -302,9 +302,7 @@ jQuery(function() {
 
 
 	jQuery('.acf-map').each(function(){
-
 		render_map( jQuery(this) );
-
 	});
     
     var $grid = jQuery('.animated-grid');
