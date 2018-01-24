@@ -8,12 +8,9 @@ jQuery(function() {
 jQuery(function() {
 
     jQuery('.tab-header').on('click',function() {
-        jQuery('.tab-country').removeClass('tab-open');
-        var currIndex = jQuery('.tab-header').index(this);
-        jQuery(jQuery('.tab-country')[currIndex]).addClass('tab-open');
-
+        jQuery('.tab-country').addClass('hidden');
+        jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden');
     });
-
 
     // SET PRODUCT PAGE'S CAROUSEL's HEIGHT
     var carouselHeight = 0.70 * jQuery(window).innerHeight();
