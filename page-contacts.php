@@ -77,7 +77,7 @@ get_header(); ?>
                             $fs_id = 1;
                             while ( have_rows('location') ) : the_row();
                             
-                            if ($fs == 1 || ($fs % 5) == 0) 
+                            if ($fs == 1 || ($fs % 4) == 1)
 							{
 							?>
 								<div class="row">
@@ -93,14 +93,21 @@ get_header(); ?>
                             </div>
                             <?php
                             if (($fs % 4) == 0) 
-							{
-								?>
-								</div>
-								<?php
-								$fs_id++;
-							}
+                            {
+                                ?>
+                                </div>
+                                <?php
+                            }
+                            if (($fs % 4) != 0) 
+                            {
+                                $fs_last = '</div>';
+                            }
+                            else {
+                                $fs_last = '';
+                            }
                             $fs++;
                             endwhile;
+                            echo $fs_last;
                         endif;
                         ?>
                     </div>
