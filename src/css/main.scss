@@ -19,14 +19,7 @@ body {
 }
 
 
-.tab-container {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-}
 .tab-country {
-    flex: 1;
-    visibility: collapse;
     [class*=col] {
         [class*=col] {
             margin-bottom: 30px;
