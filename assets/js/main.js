@@ -8,8 +8,8 @@ jQuery(function() {
     jQuery('.tab-header').on('click', function() {
         jQuery('.tab-country').addClass('hidden').hide();
         jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden').show();
-        return false;
         google.maps.event.trigger(map, 'resize');
+        return false;
     });
 
     // SET PRODUCT PAGE'S CAROUSEL's HEIGHT
