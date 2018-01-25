@@ -85,9 +85,9 @@ get_header(); ?>
                         }
                         ?>
                         <div class="col-md-3">
-                            <?php echo get_sub_field('city'); ?><br />
+                            <p><?php echo get_sub_field('city'); ?></p>
                             <strong><?php echo get_sub_field('company'); ?></strong><br />
-                            <?php echo get_sub_field('address'); ?><br /><br />
+                            <?php echo get_sub_field('address'); ?><br />
                             <a href="mailto:<?php echo get_sub_field('mail'); ?>"><?php echo get_sub_field('mail'); ?></a><br />
                             <a href="tel:<?php echo get_sub_field('phone'); ?>"><?php echo get_sub_field('phone'); ?></a>
                         </div>

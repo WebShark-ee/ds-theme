@@ -23,10 +23,8 @@ body {
     [class*=col] {
         .row {
             
-            display: flex;
-            
             [class*=col] {
-                flex: 1;
+                min-height: 240px;
                 margin-bottom: 30px;
                 padding-bottom: 10px;
                 border-bottom: 1px solid #ccc;
