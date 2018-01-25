@@ -5,11 +5,12 @@ jQuery(function() {
         jQuery(this).ekkoLightbox();
     });
 
-    jQuery('.tab-header').on('click', function() {
+    jQuery('.tab-header').on('click', function(event) {
+        event.preventDefault();
         jQuery('.tab-country').addClass('hidden').hide();
         jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden').show();
         render_map( jQuery('#' + jQuery(this).attr('id') + '_block .acf-map-reseller') );
-        google.maps.event.trigger(map, 'resize');
+        //google.maps.event.trigger(map, 'resize');
         return false;
     });
 
