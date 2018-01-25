@@ -71,11 +71,19 @@ get_header(); ?>
                     <h1><?php echo get_sub_field('country'); ?></h1>
                 </div>
                 <div class="col-md-12 white-box">
-                    <div class="row">
                         <?php
                         if( have_rows('location') ):
+                            $fs = 1;
+                            $fs_id = 1;
                             while ( have_rows('location') ) : the_row();
-                            ?>
+                            
+                            if ($fs == 1 || ($fs % 5) == 0) 
+							{
+							?>
+								<div class="row">
+							<?php
+							}
+							?>
                             <div class="col-md-3">
                                 <?php echo get_sub_field('city'); ?><br />
                                 <strong><?php echo get_sub_field('company'); ?></strong><br />
@@ -84,6 +92,14 @@ get_header(); ?>
                                 <a href="tel:<?php echo get_sub_field('phone'); ?>"><?php echo get_sub_field('phone'); ?></a>
                             </div>
                             <?php
+                            if (($fs % 4) == 0) 
+							{
+								?>
+								</div>
+								<?php
+								$fs_id++;
+							}
+                            $fs++;
                             endwhile;
                         endif;
                         ?>
