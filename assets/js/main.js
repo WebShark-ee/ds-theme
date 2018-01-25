@@ -9,7 +9,7 @@ jQuery(function() {
         jQuery('.tab-country').addClass('hidden').hide();
         jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden').show();
         //google.maps.event.trigger(map, 'resize');
-        render_map( jQuery('#' + jQuery(this).attr('id') + '_block .acf-map') );
+        render_map( jQuery('#' + jQuery(this).attr('id') + '_block .acf-map-reseller') );
         return false;
     });
 

@@ -90,7 +90,7 @@ get_header(); ?>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <div class="acf-map">
+                    <div class="acf-map-reseller">
                         <?php
                         if( have_rows('location') ):
                             while ( have_rows('location') ) : the_row();
