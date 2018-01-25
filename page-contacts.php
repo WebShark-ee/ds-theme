@@ -71,46 +71,45 @@ get_header(); ?>
                     <h1><?php echo get_sub_field('country'); ?></h1>
                 </div>
                 <div class="col-md-12 white-box">
+                    <?php
+                    if( have_rows('location') ):
+                        $fs = 1;
+                        $fs_id = 1;
+                        while ( have_rows('location') ) : the_row();
+
+                        if ($fs == 1 || ($fs % 4) == 1)
+                        {
+                        ?>
+                            <div class="row">
                         <?php
-                        if( have_rows('location') ):
-                            $fs = 1;
-                            $fs_id = 1;
-                            while ( have_rows('location') ) : the_row();
-                            
-                            if ($fs == 1 || ($fs % 4) == 1)
-							{
-							?>
-								<div class="row">
-							<?php
-							}
-							?>
-                            <div class="col-md-3">
-                                <?php echo get_sub_field('city'); ?><br />
-                                <strong><?php echo get_sub_field('company'); ?></strong><br />
-                                <?php echo get_sub_field('address'); ?><br /><br />
-                                <a href="mailto:<?php echo get_sub_field('mail'); ?>"><?php echo get_sub_field('mail'); ?></a><br />
-                                <a href="tel:<?php echo get_sub_field('phone'); ?>"><?php echo get_sub_field('phone'); ?></a>
+                        }
+                        ?>
+                        <div class="col-md-3">
+                            <?php echo get_sub_field('city'); ?><br />
+                            <strong><?php echo get_sub_field('company'); ?></strong><br />
+                            <?php echo get_sub_field('address'); ?><br /><br />
+                            <a href="mailto:<?php echo get_sub_field('mail'); ?>"><?php echo get_sub_field('mail'); ?></a><br />
+                            <a href="tel:<?php echo get_sub_field('phone'); ?>"><?php echo get_sub_field('phone'); ?></a>
+                        </div>
+                        <?php
+                        if (($fs % 4) == 0) 
+                        {
+                            ?>
                             </div>
                             <?php
-                            if (($fs % 4) == 0) 
-                            {
-                                ?>
-                                </div>
-                                <?php
-                            }
-                            if (($fs % 4) != 0) 
-                            {
-                                $fs_last = '</div>';
-                            }
-                            else {
-                                $fs_last = '';
-                            }
-                            $fs++;
-                            endwhile;
-                            echo $fs_last;
-                        endif;
-                        ?>
-                    </div>
+                        }
+                        if (($fs % 4) != 0) 
+                        {
+                            $fs_last = '</div>';
+                        }
+                        else {
+                            $fs_last = '';
+                        }
+                        $fs++;
+                        endwhile;
+                        echo $fs_last;
+                    endif;
+                    ?>
                 </div>
                 <div class="col-md-12">
                     <div class="acf-map-reseller">
