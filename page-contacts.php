@@ -53,7 +53,7 @@ get_header(); ?>
                     while ( have_rows('resellers') ) : the_row();
                     ?>
                     <div class="col-md-2">
-                        <a class="tab-header" href="#">&gt; <span><?php echo get_sub_field('country'); ?></span></a>
+                        <a class="tab-header" href="#" id="country_<?php echo strtolower(get_sub_field('country')); ?>">&gt; <?php echo get_sub_field('country'); ?></a>
                     </div>
                     <?php
                     endwhile;
@@ -61,12 +61,12 @@ get_header(); ?>
                 ?>
             </div>
         </div>
-        <div class="tab-container">
+        
         <?php
         if( have_rows('resellers') ):
             while ( have_rows('resellers') ) : the_row();
             ?>
-            <div class="tab-country">
+            <div class="tab-country hidden" id="country_<?php echo strtolower(get_sub_field('country')); ?>_block">
                 <div class="col-md-12 header-grey-box">
                     <h1><?php echo get_sub_field('country'); ?></h1>
                 </div>
@@ -122,7 +122,6 @@ get_header(); ?>
             endwhile;
         endif;
         ?>
-        </div>
     </div>
 </div>
 
