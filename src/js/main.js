@@ -19,6 +19,7 @@ jQuery(function() {
 
         jQuery('#' + jQuery(this).attr('id') + '_block').addClass('tab-open');
         return false;
+        google.maps.event.trigger(map, 'resize');
     });
 
     // SET PRODUCT PAGE'S CAROUSEL's HEIGHT
