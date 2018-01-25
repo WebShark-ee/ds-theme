@@ -8,7 +8,7 @@ jQuery(function() {
     jQuery('.tab-header').on('click', function() {
         jQuery('.tab-country').addClass('hidden').hide();
         jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden').show();
-        google.maps.event.trigger(map, 'resize');
+        //google.maps.event.trigger(map, 'resize');
         return false;
     });
 
