@@ -7,10 +7,17 @@ jQuery(function() {
 
     jQuery('.tab-header').on('click', function(event) {
         event.preventDefault();
-        jQuery('.tab-country').addClass('hidden').hide();
+        jQuery('.tab-country').addClass('hidden wasvisible').hide();
         jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden').show();
-        render_map( jQuery('#' + jQuery(this).attr('id') + '_block .acf-map-reseller') );
-        //google.maps.event.trigger(map, 'resize');
+        if (jQuery('#' + jQuery(this).attr('id') + '_block').hasClass('wasvisible'))
+        {
+            var maped = jQuery('#' + jQuery(this).attr('id') + '_block .acf-map-reseller');
+            google.maps.event.trigger(maped, 'resize');
+        }
+        else
+        {
+            render_map( jQuery('#' + jQuery(this).attr('id') + '_block .acf-map-reseller') );
+        }
         return false;
     });
 
