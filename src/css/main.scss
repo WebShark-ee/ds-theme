@@ -19,11 +19,14 @@ body {
 }
 
 
-.tab-header {
-
+.tab-container {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
 }
 .tab-country {
-    display: none;
+    flex: 1;
+    visibility: collapse;
     [class*=col] {
         [class*=col] {
             margin-bottom: 30px;
@@ -38,13 +41,12 @@ body {
             }
         }
     }
-    
     .header-grey-box {
         margin-bottom: 0;
     }
 }
 .tab-open {
-    display: block;
+	visibility: visible;
 }
 
 

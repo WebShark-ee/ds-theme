@@ -7,9 +7,17 @@ jQuery(function() {
 
 jQuery(function() {
 
-    jQuery('.tab-header').on('click',function() {
-        jQuery('.tab-country').addClass('hidden').hide();
-        jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden').show();
+    jQuery('.tab-header').on('click', function() {
+        var clickedCountry = jQuery(this).find('span').text();
+
+        jQuery('.tab-country').each(function() {
+            jQuery(this).removeClass('tab-open');
+            if (jQuery(this).find('h1').text() == clickedCountry) {
+                jQuery(this).addClass('tab-open');
+            }
+        });
+
+        jQuery('#' + jQuery(this).attr('id') + '_block').addClass('tab-open');
         return false;
     });
 
