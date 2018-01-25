@@ -7,7 +7,7 @@ jQuery(function() {
 
     jQuery('.tab-header').on('click', function(event) {
         event.preventDefault();
-        jQuery('.tab-country').addClass('hidden wasvisible').hide();
+        jQuery('.tab-country').addClass('hidden').hide();
         jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden').show();
         if (jQuery('#' + jQuery(this).attr('id') + '_block').hasClass('wasvisible'))
         {
@@ -18,6 +18,7 @@ jQuery(function() {
         {
             render_map( jQuery('#' + jQuery(this).attr('id') + '_block .acf-map-reseller') );
         }
+        jQuery('#' + jQuery(this).attr('id') + '_block').addClass('wasvisible');
         return false;
     });
 
