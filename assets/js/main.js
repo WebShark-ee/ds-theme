@@ -1,25 +1,15 @@
 jQuery(function() {
+    
     jQuery(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
         jQuery(this).ekkoLightbox();
     });
-});
-
-jQuery(function() {
 
     jQuery('.tab-header').on('click', function() {
-        var clickedCountry = jQuery(this).find('span').text();
-
-        jQuery('.tab-country').each(function() {
-            jQuery(this).removeClass('tab-open');
-            if (jQuery(this).find('h1').text() == clickedCountry) {
-                jQuery(this).addClass('tab-open');
-            }
-        });
-
-        jQuery('#' + jQuery(this).attr('id') + '_block').addClass('tab-open');
-        return false;
+        jQuery('.tab-country').addClass('hidden').hide();
+        jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden').show();
         google.maps.event.trigger(map, 'resize');
+        return false;
     });
 
     // SET PRODUCT PAGE'S CAROUSEL's HEIGHT
