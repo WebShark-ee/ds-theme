@@ -8,7 +8,6 @@ jQuery(function() {
     jQuery('.tab-header').on('click', function() {
         jQuery('.tab-country').addClass('hidden').hide();
         jQuery('#' + jQuery(this).attr('id') + '_block').removeClass('hidden').show();
-        var map = jQuery('#' + jQuery(this).attr('id') + '_block .acf-map')
         google.maps.event.trigger(map, 'resize');
         return false;
     });
@@ -181,7 +180,7 @@ jQuery(function() {
         };
 
         // create map	        	
-        var map = new google.maps.Map( $el[0], args);
+        map = new google.maps.Map( $el[0], args);
 
         // add a markers reference
         map.markers = [];
