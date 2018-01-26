@@ -3001,4 +3001,10 @@ input:checked + .slider:before {
             }
         }
     }
+    
+    .actions {
+        .btn-info {
+            display: none
+        }
+    }
 }

@@ -167,6 +167,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
+                    
+                    <input type="submit" class="btn btn-info" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>" />
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
