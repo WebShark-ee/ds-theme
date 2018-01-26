@@ -1706,6 +1706,6 @@ function my_custom_checkout_field_process() {
     global $woocommerce;
  
     // Check if set, if its not set add an error.
-    if ($_POST['my_field_name'] == ' ' || $_POST['my_field_name'] == '0')
+    if ($_POST['my_field_name'] != '1')
          $woocommerce->add_error( __('Please agree to my checkbox.') );
 }
