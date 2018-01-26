@@ -1685,12 +1685,25 @@ class Description_Walker extends Walker_Nav_Menu
 /**
 * Add the field to the checkout
 **/
+
+add_action('woocommerce_check_cart_items', 'my_custom_checkout_field_process');
+function my_custom_checkout_field_process() {
+        if ( is_checkout() ) {
+
+            // Check if set, if its not set add an error.
+            if ($_POST['terms_and_conditions'] != '1') {
+                wc_add_notice(__('Please accept terms and conditions.'), 'error');
+                return false;
+            }
+        }
+}
+
 add_action('woocommerce_proceed_to_checkout', 'my_custom_checkout_field', 40);
 
 function my_custom_checkout_field() {
     echo '<div id="terms_and_condition_check" class="pull-right">';
 
-    woocommerce_form_field( 'my_field_name', array(
+    woocommerce_form_field( 'terms_and_conditions', array(
         'type'          => 'checkbox',
         'class'        => array('my-field-class form-row-wide'),
         'label'        => __('<a href="#terms_condition" data-toggle="modal" data-target="#terms_condition">Accept terms and conditions</a>'),
@@ -1698,14 +1711,5 @@ function my_custom_checkout_field() {
     ));
 
     echo '</div>';
-}
-
-add_action('woocommerce_proceed_to_checkout', 'my_custom_checkout_field_process', 50);
- 
-function my_custom_checkout_field_process() {
-    global $woocommerce;
- 
-    // Check if set, if its not set add an error.
-    if ($_POST['my_field_name'] == ' ' || $_POST['my_field_name'] == '0')
-         $woocommerce->add_error( __('Please agree to my checkbox.') );
+    
 }
