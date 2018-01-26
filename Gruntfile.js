@@ -38,7 +38,6 @@ module.exports = function(grunt) {
         concat: {
             js: {
                 src: [
-                    'bower_components/jquery/dist/jquery.min.js',
                     'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
                     'bower_components/ekko-lightbox/dist/ekko-lightbox.js',
                     'bower_components/flexslider/jquery.flexslider-min.js'
