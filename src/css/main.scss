@@ -3006,5 +3006,11 @@ input:checked + .slider:before {
         .btn-info {
             display: none
         }
+        
+        .coupon {
+            .btn-info {
+                display: inline-block
+            }
+        }
     }
 }
