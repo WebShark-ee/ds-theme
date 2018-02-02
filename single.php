@@ -30,17 +30,6 @@ get_header(); ?>
                         </div>
                     </div>
                 </form>
-                <h1 class="box-heading">Categories</h1>
-                <ul class="posts">
-                    <?php
-                    $args = array('type' => 'post', 'hide_empty' => false);
-                    $tags = get_categories($args);
-                    foreach ( $tags as $tag ) {
-                        $tag_link = get_tag_link( $tag->term_id );
-                        echo '<li><a href="' . $tag_link . '">' . $tag->name . '</a></li>';
-                    }
-                    ?>
-                </ul>
             </div>
         </div>
         
