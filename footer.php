@@ -96,6 +96,24 @@
         </div>
     </div>
     
+    <div class="modal fade" id="agree_terms_condition" tabindex="-1" role="dialog" aria-labelledby="agree_terms_condition">
+        <div class="modal-dialog modal-lg bg-danger" role="document">
+            <div class="modal-content">
+                <form class="form-horizontal">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                         <h4 class="modal-title" id="myModalLabel">Info</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <h3>You should agree terms and conditions!</h3>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 <?php wp_footer(); ?>
 
 </body>

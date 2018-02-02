@@ -358,6 +358,17 @@ jQuery(function() {
         });
     }
     
+    jQuery('#chekout').click(function(){
+        if (jQuery('#my_field_name').is(':checked'))
+        {
+            
+        }
+        else {
+            jQuery('#agree_terms_condition').modal('show')
+            return false;
+        }
+    })
+    
 })
 
 /**
