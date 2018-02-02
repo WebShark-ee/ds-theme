@@ -30,17 +30,6 @@ get_header(); ?>
                         </div>
                     </div>
                 </form>
-                <h1 class="box-heading">Tags</h1>
-                <div class="post_tags">
-                <?php
-                $args = array('hide_empty' => false);
-                $tags = get_tags($args);
-                foreach ( $tags as $tag ) {
-                    $tag_link = get_tag_link( $tag->term_id );
-                    echo '<a href="' . $tag_link . '">' . $tag->name . '</a> ';
-                }
-                ?>
-                </div>
                 <h1 class="box-heading">Recent Posts</h1>
                 <ul class="posts">
                     <?php
