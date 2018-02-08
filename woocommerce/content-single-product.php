@@ -86,6 +86,9 @@ if ( ! defined( 'ABSPATH' ) ) {
              */
             if ($is_bundle_product == true)
             {
+                $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
+                $thumb_size_image = wp_get_attachment_image_src( $post_thumbnail_id, 'shop_thumbnail' );
+                $attachment_ids = $product->get_gallery_image_ids();
                 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
                 //add_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_thumbnails', 20 );
                 ?>
@@ -93,7 +96,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <ul class="slides" id="">
                         <li><img src="<?php echo $thumb_size_image[0]; ?>"></li>
                         <?php
-                        if ( $attachment_ids && has_post_thumbnail() ) {
+                        if ( $attachment_ids ) {
                             foreach ( $attachment_ids as $attachment_id ) {
                                 $thumbnail = wp_get_attachment_image_src( $attachment_id, 'shop_thumbnail' );
                                 echo '<li><img src="' . $thumbnail[0] . '"></li>';
