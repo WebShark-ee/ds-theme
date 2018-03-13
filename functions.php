@@ -1659,7 +1659,7 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 
 class Description_Walker extends Walker_Nav_Menu
 {
-    function start_el(&$output, $item, $depth, $args)
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
     {
         $classes = empty($item->classes) ? array () : (array) $item->classes;
         $class_names = join(' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
@@ -1678,7 +1678,7 @@ class Description_Walker extends Walker_Nav_Menu
         . '</a>'
         . $args->link_after
         . $args->after;
-        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args, $id );
     }
 }
 
