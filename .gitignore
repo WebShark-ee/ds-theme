@@ -1,5 +1,9 @@
-/nbproject/
-/node_modules/
-/bower_components/
-/app/
-/.sass-cache/
+nbproject/
+
+node_modules/
+
+bower_components/
+
+app/
+
+.sass-cache/
