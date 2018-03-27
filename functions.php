@@ -901,6 +901,9 @@ function ds_scripts() {
         wp_enqueue_script( 'magnific-popup-script', get_theme_file_uri( '/assets/js/jquery.magnific-popup.min.js' ), array(), '1.0', true );
         wp_enqueue_script( 'main-voyager-script', get_theme_file_uri( '/assets/js/main-voyager.js' ), array(), '1.0', true );
     }
+    if ( is_page('systems') ) {
+        wp_enqueue_style( 'main-systems-style', get_theme_file_uri( '/assets/css/main-ds-sets.css' ), array( 'twentyseventeen-style' ), '2.0' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'ds_scripts' );
 
@@ -1708,4 +1711,12 @@ function my_custom_checkout_field_process() {
     // Check if set, if its not set add an error.
     if ($_POST['my_field_name'] == ' ' || $_POST['my_field_name'] == '0')
          $woocommerce->add_error( __('Please agree to my checkbox.') );
+}
+
+add_filter( 'body_class', 'custom_class' );
+function custom_class( $classes ) {
+    if ( is_page_template( 'page-systems.php' ) ) {
+        $classes[] = 'ds-sets';
+    }
+    return $classes;
 }
