@@ -1,0 +1,91 @@
+$screen-lg: 1240px;
+$screen-md: 960px;
+$screen-sm: 768px;
+
+.manuals {
+    background: #000;
+    color: #FFF;
+	font-size: 17px;
+	line-height: 1.5;
+	font-weight: 300;
+    .container {
+        width: 100%;
+        max-width: 1240px;
+        margin: auto;
+    }
+    .row, .col {
+        overflow: hidden;
+        padding-top: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .row-with-border {
+        &:first-child {
+            border-top: 20px solid #5d5d5d;
+        }
+        border-bottom: 20px solid #5d5d5d;
+        table {
+            width: 100%;
+            margin: 20px 0;
+            td {
+                padding: 20px 10px 20px 0;
+                border-top: 1px solid #5d5d5d;
+                border-bottom: 1px solid #5d5d5d;
+            }
+            .btn {
+                background: #00aeca;
+                color: #fff;
+                position: relative;
+                line-height: 20px;
+                border: none;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    right: -10px;
+                    top: 0;
+                    border-left: 10px solid #00aeca;
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                }
+            }
+        }
+    }
+    h2 {
+        margin: 0;
+    }
+    h2 {
+        font-size: 3em;
+        font-weight: 100;
+        margin: .5em 0 .1em;
+        @media (min-width: $screen-sm) {
+            margin: 2.5em 0 .1em;
+        }
+    }
+    @media (min-width: $screen-sm) {
+        .row, .col {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .col-25, .col-50, .col-75 {
+            float: left;
+        }
+        .col-25 {
+            width: 25%;
+        }
+        .col-50 {
+            width: 50%;
+        }
+        .col-75 {
+            width: 75%;
+        }
+        .gallery {
+            .arrow {
+                margin-left: -63px;
+                margin-top: -42px;
+                width: 84px;
+                height: 84px;
+            }
+        }
+    }
+}
