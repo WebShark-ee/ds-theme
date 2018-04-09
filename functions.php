@@ -904,6 +904,9 @@ function ds_scripts() {
     if ( is_page('systems') ) {
         wp_enqueue_style( 'main-systems-style', get_theme_file_uri( '/assets/css/main-ds-sets.css' ), array( 'twentyseventeen-style' ), '2.0' );
     }
+    if ( is_page_template( 'page-manuals.php' ) ) {
+        wp_enqueue_style( 'main-manuals-style', get_theme_file_uri( '/assets/css/main-manuals.css' ), array( 'twentyseventeen-style' ), '2.0' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'ds_scripts' );
 
@@ -1717,6 +1720,9 @@ add_filter( 'body_class', 'custom_class' );
 function custom_class( $classes ) {
     if ( is_page_template( 'page-systems.php' ) ) {
         $classes[] = 'ds-sets';
+    }
+    if ( is_page_template( 'page-manuals.php' ) ) {
+        $classes[] = 'manuals';
     }
     return $classes;
 }
