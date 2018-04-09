@@ -569,6 +569,10 @@ input:checked + .slider:before {
             }
         }
     }
+    
+    .eas-image {
+        display: block
+    }
 }
 
 //*****SYSTEMS******//
@@ -2554,18 +2558,15 @@ input:checked + .slider:before {
     .row-cards .product-card p, .product-card-fluid p{
         font-size: 22px;
     }
-    #footer-default{
+    #footer-default {
 
-        .footer-nav-left{
+        .footer-nav-left {
 
-
-            li>a {
+            li > a {
                 line-height: 25px;
                 padding: 0;
                 font-size: 20px;
-
             }
-
         }
     }
 
