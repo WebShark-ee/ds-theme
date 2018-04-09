@@ -2500,6 +2500,12 @@ input:checked + .slider:before {
     }
 }
 
+@media (max-width: 430px) {
+    .eas-image {
+        margin-top: 10px;
+    }
+}
+
 @media (max-width: 365px) {
     //NAVBAR
     .col-xs-3-right {
