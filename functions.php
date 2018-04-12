@@ -1306,7 +1306,7 @@ function woocommerce_support() {
 }
 
 
-/* add custom post type - banner */
+/* add custom post type - learn */
 
 add_action( 'init', 'codex_custom_init_learn' );
 function codex_custom_init_learn() {
@@ -1725,4 +1725,95 @@ function custom_class( $classes ) {
         $classes[] = 'manuals';
     }
     return $classes;
+}
+
+/* add custom post type - manual */
+
+add_action( 'init', 'codex_custom_init_manual' );
+function codex_custom_init_manual() {
+  $labels = array(
+    'name' => _x('Manual', 'post type general name'),
+    'singular_name' => _x('Manual', 'post type singular name'),
+    'add_new' => _x('Add Manual', 'Manual'),
+    'add_new_item' => __('Add new Manual'),
+    'edit_item' => __('Edit Manual'),
+    'new_item' => __('New Manual'),
+    'all_items' => __('All Manuals'),
+    'view_item' => __('View Manual'),
+    'search_items' => __('Search Manual'),
+    'not_found' =>  __('No Manual found'),
+    'not_found_in_trash' => __('No Manual found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'Manuals'
+
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+	'menu_icon' => 'dashicons-media-text',
+    'capability_type' => 'post',
+    'has_archive' => true, 
+    'hierarchical' => false,
+    'menu_position' => 5,
+    'supports' => array( 'title' )
+  ); 
+  register_post_type('manual',$args);
+  flush_rewrite_rules();
+}
+
+//add filter to ensure the text plot, or plot, is displayed when user updates a plot 
+add_filter( 'post_updated_messages', 'codex_manual_updated_messages' );
+function codex_manual_updated_messages( $messages ) {
+  global $post, $post_ID;
+
+  $messages['manual'] = array(
+    0 => '', // Unused. Messages start at index 1.
+    1 => sprintf( __('Manual updated. <a href="%s">View Manual</a>'), esc_url( get_permalink($post_ID) ) ),
+    2 => __('Custom field updated.'),
+    3 => __('Custom field deleted.'),
+    4 => __('Manual updated.'),
+    /* translators: %s: date and time of the revision */
+    5 => isset($_GET['revision']) ? sprintf( __('Manual restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+    6 => sprintf( __('Manual published. <a href="%s">View Manual</a>'), esc_url( get_permalink($post_ID) ) ),
+    7 => __('Manual saved.'),
+    8 => sprintf( __('Manual submitted. <a target="_blank" href="%s">Preview Manual</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+    9 => sprintf( __('Manual scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Manual</a>'),
+      // translators: Publish box date format, see http://php.net/date
+      date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+    10 => sprintf( __('Manual draft updated. <a target="_blank" href="%s">Preview Manual</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+  );
+
+  return $messages;
+}
+
+//display contextual help for product
+add_action( 'contextual_help', 'codex_add_help_text_manual', 10, 3 );
+
+function codex_add_help_text_manual( $contextual_help, $screen_id, $screen ) { 
+  //$contextual_help .= var_dump( $screen ); // use this to help determine $screen->id
+  if ( 'manual' == $screen->id ) {
+    $contextual_help =
+      '<p>' . __('Things to remember when adding or editing a Manual:') . '</p>' .
+      '<ul>' .
+      '<li>' . __('Specify the correct genre such as Mystery, or Historic.') . '</li>' .
+      '<li>' . __('Specify the correct writer of the Manual.  Remember that the Author module refers to you, the author of this Manual review.') . '</li>' .
+      '</ul>' .
+      '<p>' . __('If you want to schedule the Manual review to be published in the future:') . '</p>' .
+      '<ul>' .
+      '<li>' . __('Under the Manual module, click on the Edit link next to Publish.') . '</li>' .
+      '<li>' . __('Change the date to the date to actual publish this article, then click on Ok.') . '</li>' .
+      '</ul>' .
+      '<p><strong>' . __('For more information:') . '</strong></p>' .
+      '<p>' . __('<a href="http://codex.wordpress.org/Posts_Edit_SubPanel" target="_blank">Edit Posts Documentation</a>') . '</p>' .
+      '<p>' . __('<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>' ;
+  } elseif ( 'edit-Manual' == $screen->id ) {
+    $contextual_help = 
+      '<p>' . __('This is the help screen displaying the table of Manual blah blah blah.') . '</p>' ;
+  }
+  return $contextual_help;
 }

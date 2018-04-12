@@ -10,7 +10,7 @@ get_header(); ?>
     <?php
     $params = array(
         'posts_per_page' => -1, 
-        'post_type' => 'product',
+        'post_type' => 'manual',
         'meta_query' => array (
             array (
                 //'relation' => 'OR',
