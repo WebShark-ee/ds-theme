@@ -3,6 +3,7 @@ $link-color: #00afcb;
 @import "variables";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "css3-mixins.scss";
+@import "main-ds-sets";
 
 
 * {
@@ -181,11 +182,11 @@ a:hover{
         }
     }
     
-    .navbar-placeholder {
-        margin-bottom: 20px;
-    }
-}
 
+}
+.navbar-placeholder {
+  margin-bottom: 20px;
+}
 @media (max-width: 767px) {
     .home {
         .navbar-placeholder {
@@ -542,7 +543,6 @@ input:checked + .slider:before {
 #footer-default {
 
     .navbar-nav {
-        height: 50px;
         margin: 0;
         float: left;
 
@@ -881,6 +881,7 @@ input:checked + .slider:before {
 
     .col-md-6 {
         margin: 0 0 7px;
+        overflow: hidden;
     }
 
     .block-right {
@@ -913,6 +914,7 @@ input:checked + .slider:before {
         position: relative;
         background: #00afcb;
         width: auto;
+        display: inline-block;
 
         &:before, &:after {
             content: "";
@@ -1031,10 +1033,13 @@ input:checked + .slider:before {
 //news
 
 .row-cards-fluid{
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
-    margin: 0;
+
+    @media (min-width: 768px) {
+      -moz-column-count: 3;
+      -webkit-column-count: 3;
+      column-count: 3;
+      margin: 0;
+    }
 }
 .row-news {
 
@@ -1811,7 +1816,6 @@ input:checked + .slider:before {
         font-size: 20px;
     }
     .product-card-fluid{
-        width: 650px;
         max-width: 100%;
         margin: auto;
         border-top: 18px solid #f2f2f2;
@@ -1821,7 +1825,7 @@ input:checked + .slider:before {
             width: 100%;
         }
         p{
-            font-size: 25px;
+            font-size: 20px;
         }
     }
 
@@ -1842,7 +1846,7 @@ input:checked + .slider:before {
         .navbar-nav li>a{
             padding: 0;
             color: #fff;
-            font-size: 23px;
+            font-size: 20px;
             font-weight: 300;
             line-height: 72px;
         }
@@ -1859,7 +1863,9 @@ input:checked + .slider:before {
         .footer-nav-right{
 
             padding-right: 35px;
-
+            li:last-child {
+              margin-top: 10px;
+            }
             li>a{
                 padding: 0 15px;
             }
@@ -2275,12 +2281,12 @@ input:checked + .slider:before {
         .read-btn{
             border: 0;
             width: 100%;
-            font-size: 34px;
+            font-size: 22px;
             color: #fff;
             font-weight: 300;
-            height: 80px;
+            height: 48px;
             background-color: #9c9e9f;
-            line-height: 80px;
+            line-height: 48px;
         }
     }
 }
@@ -2309,7 +2315,6 @@ input:checked + .slider:before {
         }
 
         .navbar-nav {
-            height: 30px;
             margin-top: 10px;
 
             li {
@@ -2459,7 +2464,25 @@ input:checked + .slider:before {
 
 @media (max-width: 465px) {
 
-
+    .row-downloads {
+      .col-md-6 {
+        p {
+          float: none;
+          margin-bottom: 3px;
+        }
+        .triangle-wrapper {
+          float: none;
+          width: 100%;
+          > div {
+            text-align: center;
+            overflow: hidden;
+            a {
+              float: none;
+            }
+          }
+        }
+      }
+    }
     .coma{
         display: none;
     }
@@ -2468,7 +2491,7 @@ input:checked + .slider:before {
 
         .footer-nav-left{
             margin-top: -2px;
-            margin-bottom: 26px;
+            margin: 10px 0 15px;
 
             li > a{
                 line-height: 25px;
@@ -2546,7 +2569,7 @@ input:checked + .slider:before {
         font-size: 20px;
     }
     .row-cards .product-card p, .product-card-fluid p{
-        font-size: 22px;
+        font-size: 20px;
     }
     #footer-default{
 
