@@ -1817,3 +1817,9 @@ function codex_add_help_text_manual( $contextual_help, $screen_id, $screen ) {
   }
   return $contextual_help;
 }
+
+add_filter('woocommerce_thankyou_order_received_text', 'woo_change_order_received_text', 10, 2 );
+function woo_change_order_received_text( $str, $order ) {
+    $new_str = '<p><strong>Thank You for the order! Your order is being processed and we will get back to You within a working day with the payment details.</strong></p>';
+    return $new_str;
+}
