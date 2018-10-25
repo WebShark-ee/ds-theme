@@ -192,6 +192,7 @@ get_header(); ?>
                     endif;
                     ?>
                 </div>
+            </div>
             <?php
             endwhile;
         endif;
@@ -322,6 +323,7 @@ get_header(); ?>
                     endif;
                     ?>
                 </div>
+            </div>
             <?php
             endwhile;
 
@@ -331,8 +333,6 @@ get_header(); ?>
     </div>
 
 </div>
-
-
 
 <?php get_footer();
 
