@@ -196,6 +196,7 @@ get_header(); ?>
             endwhile;
         endif;
     ?>
+    </div>
     <div class="row row-about">
 
         <div class="col-md-12 header-grey-box">
